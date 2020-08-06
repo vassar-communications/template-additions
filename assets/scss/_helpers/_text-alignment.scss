@@ -1,0 +1,11 @@
+.center-title {
+	//	Applies only to rows, for now
+	&.RowContainer .Row__title {
+		margin: 0 auto;
+		text-align: center;
+
+		&:after {
+			left: calc(50% - 1.5em);
+		}
+	}
+}

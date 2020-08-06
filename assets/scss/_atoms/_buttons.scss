@@ -1,0 +1,35 @@
+.button {
+    text-decoration: none !important;
+    background: #eee;
+    color: #444;
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    border-radius: 0.3em;
+}
+
+.button--small {
+    font-size: 76%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.2em 0.4em 0.1em 0.4em;
+}
+.button {
+	&.theme-gray {
+		
+	}
+	&.theme-burgundy-red {
+		background: $grad-burgundy-red;
+		color: #fff;
+	}
+	&.style-wireframe {
+		background: transparent;
+		border: 1px solid #000;
+		border-color: var(--border-color, #000);
+		color: #000;
+
+		&.theme-cream {
+			--border-color: #{$cream-for-borders};
+		}
+	}
+}

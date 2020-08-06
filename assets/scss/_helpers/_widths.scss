@@ -1,0 +1,13 @@
+
+/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
+
+
+
+/*	For rows
+	======== */
+
+.Row {
+	.RowContainer.width-xwide & {
+	    max-width: 58em;
+	}
+}
