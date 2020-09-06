@@ -1,5 +1,10 @@
-.theme-cream {
-	background: $cream;
+.theme\:cream {
+	background:$cream;
 	
-	--item-rule-border-color: #{$cream-for-borders};
+	--item-rule-border-color:#{$cream-for-borders};
+}
+
+.theme:\coolGray {
+	background:#63666A;
+	color:#FFF8EF;
 }

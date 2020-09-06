@@ -1,0 +1,40 @@
+
+/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
+
+
+
+/*	For figures
+	=========== */
+
+figure.width-wide {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: 100vw;
+	transform: translateX(calc(50vw - 50%));
+	width: 44em;
+}
+
+
+
+/*	For rows
+	======== */
+
+.Row {
+	.RowContainer.width-xwide & {
+	    max-width: 58em;
+	}
+}
+
+.RowContainer.width-wide .Row {
+	 max-width: 44em;
+}
+ .RowContainer.width-wider .Row {
+	 max-width: 54em;
+}
+.RowContainer.width-full {
+	padding: 0;
+
+	.Row {
+		max-width: none;
+	}
+}

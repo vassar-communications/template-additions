@@ -15,17 +15,24 @@
     padding: 0.2em 0.4em 0.1em 0.4em;
 }
 .button {
+	transition: 0.4s all background;
+	
 	&.theme-gray {
 		
 	}
 	&.theme-burgundy-red {
 		background: $grad-burgundy-red;
 		color: #fff;
+		
+		&:hover, &:visited:hover {
+			background-size: 400%;
+		}
 	}
 	&.style-wireframe {
 		background: transparent;
 		border: 1px solid #000;
 		border-color: var(--border-color, #000);
+		
 		color: #000;
 
 		&.theme-cream {

@@ -1,0 +1,83 @@
+.row--feature-image {
+	//	Turn this into a module where the image fades into a background color. Have this called image-fades-out
+
+	.Row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "image title"
+    "image content";
+}
+
+  &.cols--60-40 {
+    .Row {
+        grid-template-columns: 6fr 4fr;
+    }
+  }
+  &.style:image-monochrome {
+  	.Module--halfWidth:first-of-type figure {
+  	  
+  	}
+  }
+  &.style\:image-fade {
+  	.Module--halfWidth:first-of-type figure {
+  	    width: 116%;
+  	    max-width: none !important;
+  	    margin-right: -16%;
+  	    display: block;
+  	    position: relative;
+  	    
+  	    &:after {
+  	      position: absolute;
+  	      height: 100%;
+  	      width: 16%;
+  	      right: 0;
+  	      content: '';
+background: linear-gradient(to right,  rgba(30,87,153,0) 0%,rgba(255,255,255,1) 100%);
+          top: 0;
+  	    }
+  	}
+  	.Module--halfWidth:last-of-type {
+  	  * {
+  	    position: relative;
+  	    z-index: 20;
+  	  }
+  	}
+
+  }
+
+.Module--halfWidth:first-of-type { grid-area: image; }
+.Row__title { grid-area: title !important; }
+.Module--halfWidth:last-of-type { grid-area: content; }
+
+	
+	//	scope to a specific class, add to the repo and docs now
+	
+	img {
+	    height: 100%;
+	    max-width: none;
+	    width: 100%;
+	    margin: 0 !important;
+	    object-fit: cover;
+	    position: relative;
+	    object-position: center center;
+	}
+	figure.figure--image {
+	    display: block;
+	    position: relative;
+	}
+	.Row {
+	    max-width: none;
+	    padding: 0;
+	    grid-gap: 0;
+	}
+	& {
+	    padding: 0;
+	}
+	.Module--halfWidth:last-of-type {
+	    padding: 2em;
+	}
+}
+
