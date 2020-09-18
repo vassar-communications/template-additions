@@ -1,0 +1,18 @@
+.button {
+	transition: 0.4s background ease;
+	transition-property: background, color;
+	
+	&--red {
+		@extend .button;
+
+		&:link, &:visited {
+			background: $red;
+			color: #fff;
+			
+			&:hover {
+				background: $burgundy-dark;
+				color: #fff;
+			}
+		}
+	}
+}

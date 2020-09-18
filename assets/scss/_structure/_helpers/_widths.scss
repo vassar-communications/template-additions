@@ -3,6 +3,42 @@
 
 
 
+.width\:half {
+	@include break(medium) {
+		width: 50%;
+	}
+}
+
+.place\:right {
+	@include break(medium) {
+	  float: right;
+	  margin: 0 0 2em 2em;
+  }
+}
+
+.place\:left {
+	@include break(medium) {
+
+  float: left;
+	}
+}
+
+.indent\:left {
+	@include break(medium) {
+
+  margin-left: -10%;
+  }
+}
+
+.indent\:right {
+		@include break(medium) {
+
+  margin-right: -10%;
+  }
+}
+
+
+
 /*	For figures
 	=========== */
 

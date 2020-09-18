@@ -1,10 +1,24 @@
+.button--red {
+  text-decoration: none !important;
+  background: #f00;
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  border-radius: 0.4em;
+  color: #fff;
+  margin: 1em 0;
+}
+
 .button {
     text-decoration: none !important;
     background: #eee;
-    color: #444;
     display: inline-block;
     padding: 0.1em 0.4em;
     border-radius: 0.3em;
+    
+    &:link,
+    &:visited {
+	    color: #fff;
+    }
 }
 
 .button--small {
@@ -18,7 +32,7 @@
 	transition: 0.4s all background;
 	
 	&.theme-gray {
-		
+
 	}
 	&.theme-burgundy-red {
 		background: $grad-burgundy-red;

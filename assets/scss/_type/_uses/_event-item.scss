@@ -1,0 +1,27 @@
+.event__title {
+    font-family: freight-big-pro;
+    font-size: 1.6em !important;
+    letter-spacing: 0 !important;
+    
+    .subtitle {
+		margin-top: 0.1em;
+    }
+}
+.event__description {
+	p {
+		@include sansSerif(small, condensed);
+	}
+}
+.event__speakerBio {
+	font-style: italic;
+	
+	p {
+		@include sansSerif(xsmall);		
+	}
+}
+.event__dateTime > * {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #896767;
+}
+

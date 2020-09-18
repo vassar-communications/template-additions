@@ -1,0 +1,51 @@
+@function styles($var...) {
+	$value-list: $vals;
+	$matches: false;
+
+	@each $item in $var {
+		@if index($value-list, $item) {
+			$matches: true;
+		}
+		@else {
+			//	break the loop
+			//	sass doesn't have a "break"
+			@return false;
+		}
+	}
+	@return $matches;	
+}
+	
+/*
+	Any more specific things - small condensed - must come after the generics
+*/
+
+@mixin sansSerif($vals...) {
+	$vals: $vals !global;
+
+	/*	Generics */
+
+	@if styles(small) {
+		font-size: 0.9em;
+	}
+	@if styles(xsmall) {
+		font-size: 0.8em;
+	}
+	@if styles(condensed) {
+		line-height: 1.2;
+	}
+
+	/*	More specific combinations.
+		This is in case a size needs a particular configuration.
+	 */
+
+	@if styles(small-condensed) {
+		@include sansSerif(small);
+		
+		line-height: 1.2;
+	}
+}
+
+
+
+
+

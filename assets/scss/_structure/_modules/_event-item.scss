@@ -1,0 +1,57 @@
+/*	Events system design */
+
+b.dateTime:before {
+    content: ", ";
+}
+b.dateYear {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px !important;
+}
+.u-ArticleListItem__label--location__label:after {
+    content: ": ";
+}
+
+
+
+/*	Previous design */
+
+.event__item {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	background: $gray-warm-xxlight;
+	
+	margin-bottom: 0.4em;
+	
+	.event__dateTime {
+		order: 1;
+		margin-bottom: 0.6em;
+		padding-bottom: 0.6em;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+	}
+	.event__title {
+		order: 2;
+	}
+	.event__description {
+		order: 3;
+	}
+	
+	.event__dateTime {
+		& > * {
+			display: inline;
+			margin-right: 0.4em;
+		}
+	}
+
+	.carousel-cell & {
+	    max-width: 30em;
+	    height: 100%;
+	    overflow-y: scroll;
+	    position: relative;
+	}
+}

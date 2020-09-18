@@ -1,16 +1,14 @@
 
 
 /*  BANNERS
-    ======= */
-
+    =======
 .u-folderPrison-studies .u-lHeader {
     background-image: url(/africana-studies/assets/images/Act-Out-0809-BMR_9437-crop.jpg);
 }
-
 .u-folder50th-anniversary .u-lHeader {
     background-image: url(/africana-studies/assets/images/0133-19-11-kr-africana-studies-vassar-2143-banner.jpg);
 }
-
+*/
 
 h4 {
     font-weight: bold;
@@ -157,32 +155,25 @@ figure.width-wide {
   }
 }
 /*  AFRS specific
-    ============ */
+    ============
 .bg--urban-center:before {
   opacity: 0.1;
  background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg);  
 }
-
 .u-pageHome.u-folderAfricana-studies .u-lHeader {
  background-image: url(/africana-studies/assets/images/black-studies-banner.jpg);
 background-position: center;
- 
- 
-/*  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-rashid-vassar-3975-crop.jpg); */
 }
-
 .u-folderCourses .u-lHeader {
   background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-syedullah-vassar-4060-edit1-crop.jpg);
 }
-
 .u-folderBios .u-lHeader {
   background-image: url(/africana-studies/assets/images/banner-Lawrence-Mamiya-92-TF-1.jpg);
 }
-
 .u-folderWork .u-lHeader {
   background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
 }
-
+*/
 
 .RowContainer.RowContainer--courses {
     display: none;
@@ -432,13 +423,14 @@ max-width: 48rem;
     background: #222;
 }
 
+/*
 .u-folderFaculty-lectures .u-lHeader {
  background-image: url(/africana-studies/assets/images/1-struggles-sucesses-ym-0598-standard.jpg);
 }
 .u-folderHistory .u-lHeader {
  background-image: url(/africana-studies/assets/images/thomas-occupied-standard.jpg);
 }
-
+*/
 
 
 
@@ -488,15 +480,6 @@ https://flickity.metafizzy.co
   font-size: 0.86em;
 }
 
-.readMore {
-  text-decoration: none !important;
-  border: none;
-  font-family: "Source Sans Variable", "acumin-pro", Arial, Helvetica;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  font-variation-settings: "wght" 400;
-}
-
 .RowContainer.padding\:medium {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -517,133 +500,10 @@ https://flickity.metafizzy.co
   grid-template-columns: 6fr 4fr;
 }
 
-.button {
-  text-decoration: none !important;
-  background: #f00;
-  display: inline-block;
-  padding: 0.2em 0.8em;
-  border-radius: 0.4em;
-  color: #fff;
-  margin: 1em 0;
-}
-
-.note--feature {
-  background: #f7f5f5;
-  padding: 1.4em;
-  border: 0.4em solid #fff;
-  box-shadow: 0 0.1em 0.1em rgba(0, 0, 50, 0.2);
-}
-.note--feature .note__title:first-of-type {
-  margin-top: 0;
-}
-.note--feature p {
-  font-size: 0.86em;
-}
-.note--feature p:last-of-type, .note--feature p:only-child {
-  margin-bottom: 0;
-}
-
-.width\:half {
-  width: 50%;
-}
-
-.place\:right {
-  float: right;
-  margin: 0 0 2em 2em;
-}
-
-.place\:left {
-  float: left;
-}
-
-.indent\:left {
-  margin-left: -10%;
-}
-
-.indent\:right {
-  margin-right: -10%;
-}
-
 .theme\:charcoal-warm {
   background: #242222;
   color: #bdadad;
 }
-
-.row--feature-image {
-  padding: 0 !important;
-}
-.row--feature-image .Row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "image title" "image content";
-}
-.row--feature-image.style\:image-monochrome .Module--halfWidth:first-of-type figure {
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
-  opacity: 0.6;
-}
-.row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure {
-  width: 116%;
-  max-width: none !important;
-  margin-right: -16%;
-  display: block;
-  position: relative;
-}
-.row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure:after, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure:after {
-  position: absolute;
-  height: 100%;
-  width: 16%;
-  right: 0;
-  content: '';
-  background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, white 100%);
-  top: 0;
-}
-.row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure:after {
-  width: 100%;
-}
-.row--feature-image.style\:image-fade .Module--halfWidth:last-of-type *, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:last-of-type * {
-  position: relative;
-  z-index: 20;
-}
-.row--feature-image .Module--halfWidth:first-of-type {
-  grid-area: image;
-}
-.row--feature-image .Row__title {
-  grid-area: title !important;
-  padding: 3rem 3rem 0.2em 3rem;
-  margin-top: 0;
-}
-.row--feature-image .Row__title:after {
-  display: none;
-}
-.row--feature-image .Module--halfWidth:last-of-type {
-  grid-area: content;
-}
-.row--feature-image img {
-  height: 100%;
-  max-width: none;
-  width: 100%;
-  margin: 0 !important;
-  object-fit: cover;
-  position: relative;
-  object-position: center center;
-}
-.row--feature-image figure.figure--image {
-  display: block;
-  position: relative;
-}
-.row--feature-image .Row {
-  max-width: none;
-  padding: 0;
-  grid-gap: 0;
-}
-.row--feature-image .Module--halfWidth:last-of-type {
-  padding: 0 3rem 3rem 3rem;
-}
-
-
 
 
 /* END ADD TO */
@@ -1160,7 +1020,7 @@ input.vb-close.input--click-area:hover {
 		         column-gap: 1em;
 	}
 }
-/* AFRS specific ============ */
+/* AFRS specific ============ 
  .bg--urban-center:before {
 	 background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg);
 	 opacity: 0.1;
@@ -1177,6 +1037,8 @@ input.vb-close.input--click-area:hover {
  .u-folderWork .u-lHeader {
 	 background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
 }
+*/
+
  .RowContainer.RowContainer--courses {
 	 display: none;
 }
@@ -1332,9 +1194,11 @@ input.vb-close.input--click-area:hover {
 	         transition-duration: 0.4s;
 }
  
+/*
 .u-pageIndex .u-lHeader {
     background-image: url(/summer-institute/assets/images/0043_17_06_TT_8837.jpg);
 }
+*/
  
  
 /*  In the additions repo 

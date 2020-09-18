@@ -1,0 +1,177 @@
+/*
+.carousel-cell figcaption {
+	display: none !important;
+}
+*/
+
+
+/*	LAYOUT
+	====== */
+
+
+//	If the gallery has a class of style:expand, it shows a minimized version first.
+
+@mixin dotsOnTopRight() {
+	.flickity-page-dots {
+	    position: absolute;
+	    top: 1em;
+	    right: 1em;
+	    bottom: auto;
+	    text-align: right;
+	}
+}
+
+/*	Mobile version
+	--------------
+*/
+
+@include break(medium, 'max') {
+	.carousel-cell {
+	    padding: 1em 2em;
+	}
+}
+
+
+@include break(medium) {
+
+	//	Enable flickity via watchCSS
+	.main-carousel:after {
+		content: 'flickity';
+		display: none; /* hide :after */
+	}
+	
+	#gallery {
+		--unexpandedBg: #eee;
+		--unexpandedHeight: 24em;
+	}
+	
+	.flickity-button:disabled {
+	    opacity: 0;
+	}
+	.tile {
+	    width: 20em;
+	    padding: 3em;
+	}
+	
+	.style\:expand:not(.full) {
+		&.main-carousel {
+			background: var(--unexpandedBg, #aaa);
+		}
+		img {
+			filter: grayscale(1);
+			opacity: 0.4;
+			padding: 2em 0.5em;
+		}
+	}
+	
+	.main-carousel {
+		height: var(--unexpandedHeight, 24em);
+		transition: 0.4s all ease;
+		scroll-margin-top: 0;
+		scroll-behavior: smooth;
+	
+	
+		img {
+			height: 100%;
+			width: auto;
+			padding: 1em;
+		}
+		figure {
+			height: 100%;
+			display: flex;
+			width: fit-content;
+		}
+	}
+	.flickity-viewport {
+		height: 100% !important;
+	}
+	.carousel-cell {
+		height: 100%;
+	}
+	.Row [id] {
+		scroll-margin-top: 0 !important;	
+	}
+	.carousel-cell {
+	    width: fit-content;
+	
+		img {
+			height: 100%;
+			padding: 0;
+			width: auto;
+		}
+		figcaption {
+			width: 0;
+			opacity: 0;
+		}
+	}
+	
+	.style\:expand:not(.full) {
+		.flickity-button,
+		.flickity-page-dots {
+			display: none;
+		}
+	}
+	
+	.style\:expand.full,
+	.full {
+		height: 100vh;
+		
+		@include dotsOnTopRight();
+	
+		.expand {
+			display: none;
+		}
+		.flickity-slider {
+			height: 100vh;
+		}
+		.carousel-cell {
+			width: 100%;
+			display: inline-block !important;
+			width: max-content;
+			transition: 0.4s all ease;
+	
+			/*
+			&:first-of-type {
+				height: 100%;
+				width: 30em;
+				padding: 3em;
+			}
+			*/
+	
+			&.is-selected {
+				background: #eee;
+				z-index: 1;
+				box-shadow: 0 0.3em 1em #000;
+			}
+			figcaption {
+				color: #444;
+				font-size: 90%;
+				width: 22em;
+				padding: 2em;
+				opacity: 1;
+			}
+	
+		}
+		img {
+			height: 100vh;
+			width: auto;
+			padding: 1em;
+		}
+		figure {
+			height: 100vh;
+			display: flex;
+			width: fit-content;
+		}
+		.carousel-cell:not(.is-selected) {
+			opacity: 0.2;
+			transform: scale(0.7) translateX(16em);
+		}
+		.is-selected ~ .carousel-cell {
+			opacity: 0.2;
+			transform: scale(0.7) translateX(-16em);
+		}
+		.flickity-viewport {
+			background: #222;
+		}
+	}
+}

@@ -1,7 +1,9 @@
 $breakpoints: (
-	"medium": 30em,
+	"medium": 50em,
 	"large": 70em
 );
+
+$sansSerif: '"Source Sans Variable","acumin-pro",Arial,Helvetica';
 
 /*	Colors
 	====== */
@@ -12,4 +14,13 @@ $cream-for-borders: #e8d3b8;
 
 $grad-burgundy-red: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
 
+$burgundy-dark: #641A2B;
+$burgundy-light: #951829;
+
+$gold: #C6AA76;
+
+$red: #ED1C24;
 $rowContainer: ".RowContainer";
+
+
+$gray-warm-xxlight: #f7f5f5;

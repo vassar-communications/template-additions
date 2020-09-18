@@ -1,21 +1,63 @@
 /*	Colors
 	====== */
+h2:first-of-type, h3:first-of-type, h4:first-of-type {
+  margin-top: 0; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 1.4em 0 0.4em 0; }
 
+/*
+	Any more specific things - small condensed - must come after the generics
+*/
 .intro {
   font-size: 2em !important;
   font-family: freight-big-pro;
   line-height: 1.1; }
 
+.event__title {
+  font-family: freight-big-pro;
+  font-size: 1.6em !important;
+  letter-spacing: 0 !important; }
+  .event__title .subtitle {
+    margin-top: 0.1em; }
+
+.event__description p {
+  /*	Generics */
+  font-size: 0.9em;
+  line-height: 1.2;
+  /*	More specific combinations.
+		This is in case a size needs a particular configuration.
+	 */ }
+
+.event__speakerBio {
+  font-style: italic; }
+  .event__speakerBio p {
+    /*	Generics */
+    font-size: 0.8em;
+    /*	More specific combinations.
+		This is in case a size needs a particular configuration.
+	 */ }
+
+.event__dateTime > * {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #896767; }
+
+.readMore {
+  font-family: '"Source Sans Variable","acumin-pro",Arial,Helvetica';
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 400; }
+
 /*  BANNERS
-    ======= */
+    =======
 .u-folderPrison-studies .u-lHeader {
-  background-image: url(/africana-studies/assets/images/Act-Out-0809-BMR_9437-crop.jpg); }
-
+    background-image: url(/africana-studies/assets/images/Act-Out-0809-BMR_9437-crop.jpg);
+}
 .u-folder50th-anniversary .u-lHeader {
-  background-image: url(/africana-studies/assets/images/0133-19-11-kr-africana-studies-vassar-2143-banner.jpg); }
-
+    background-image: url(/africana-studies/assets/images/0133-19-11-kr-africana-studies-vassar-2143-banner.jpg);
+}
+*/
 h4 {
   font-weight: bold;
   font-size: 0.9em;
@@ -143,25 +185,25 @@ figure.width-wide {
     column-gap: 1em; } }
 
 /*  AFRS specific
-    ============ */
+    ============
 .bg--urban-center:before {
   opacity: 0.1;
-  background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg); }
-
+ background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg);  
+}
 .u-pageHome.u-folderAfricana-studies .u-lHeader {
-  background-image: url(/africana-studies/assets/images/black-studies-banner.jpg);
-  background-position: center;
-  /*  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-rashid-vassar-3975-crop.jpg); */ }
-
+ background-image: url(/africana-studies/assets/images/black-studies-banner.jpg);
+background-position: center;
+}
 .u-folderCourses .u-lHeader {
-  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-syedullah-vassar-4060-edit1-crop.jpg); }
-
+  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-syedullah-vassar-4060-edit1-crop.jpg);
+}
 .u-folderBios .u-lHeader {
-  background-image: url(/africana-studies/assets/images/banner-Lawrence-Mamiya-92-TF-1.jpg); }
-
+  background-image: url(/africana-studies/assets/images/banner-Lawrence-Mamiya-92-TF-1.jpg);
+}
 .u-folderWork .u-lHeader {
-  background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg); }
-
+  background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
+}
+*/
 .RowContainer.RowContainer--courses {
   display: none; }
 
@@ -362,12 +404,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4em;
   background: #222; }
 
+/*
 .u-folderFaculty-lectures .u-lHeader {
-  background-image: url(/africana-studies/assets/images/1-struggles-sucesses-ym-0598-standard.jpg); }
-
+ background-image: url(/africana-studies/assets/images/1-struggles-sucesses-ym-0598-standard.jpg);
+}
 .u-folderHistory .u-lHeader {
-  background-image: url(/africana-studies/assets/images/thomas-occupied-standard.jpg); }
-
+ background-image: url(/africana-studies/assets/images/thomas-occupied-standard.jpg);
+}
+*/
 .row--large-grid .Row {
   max-width: none;
   display: grid;
@@ -503,14 +547,6 @@ https://flickity.metafizzy.co
 .typography\:sidebar p {
   font-size: 0.86em; }
 
-.readMore {
-  text-decoration: none !important;
-  border: none;
-  font-family: "Source Sans Variable", "acumin-pro", Arial, Helvetica;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  font-variation-settings: "wght" 400; }
-
 .RowContainer.padding\:medium {
   padding-top: 2em;
   padding-bottom: 2em; }
@@ -529,122 +565,9 @@ https://flickity.metafizzy.co
 .RowContainer.col-layout\:60-40 .Row {
   grid-template-columns: 6fr 4fr; }
 
-.button {
-  text-decoration: none !important;
-  background: #f00;
-  display: inline-block;
-  padding: 0.2em 0.8em;
-  border-radius: 0.4em;
-  color: #fff;
-  margin: 1em 0; }
-
-.note--feature {
-  background: #f7f5f5;
-  padding: 1.4em;
-  border: 0.4em solid #fff;
-  box-shadow: 0 0.1em 0.1em rgba(0, 0, 50, 0.2); }
-
-.note--feature .note__title:first-of-type {
-  margin-top: 0; }
-
-.note--feature p {
-  font-size: 0.86em; }
-
-.note--feature p:last-of-type, .note--feature p:only-child {
-  margin-bottom: 0; }
-
-.width\:half {
-  width: 50%; }
-
-.place\:right {
-  float: right;
-  margin: 0 0 2em 2em; }
-
-.place\:left {
-  float: left; }
-
-.indent\:left {
-  margin-left: -10%; }
-
-.indent\:right {
-  margin-right: -10%; }
-
 .theme\:charcoal-warm {
   background: #242222;
   color: #bdadad; }
-
-.row--feature-image {
-  padding: 0 !important; }
-
-.row--feature-image .Row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "image title" "image content"; }
-
-.row--feature-image.style\:image-monochrome .Module--halfWidth:first-of-type figure {
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
-  opacity: 0.6; }
-
-.row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure {
-  width: 116%;
-  max-width: none !important;
-  margin-right: -16%;
-  display: block;
-  position: relative; }
-
-.row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure:after, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure:after {
-  position: absolute;
-  height: 100%;
-  width: 16%;
-  right: 0;
-  content: '';
-  background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, white 100%);
-  top: 0; }
-
-.row--feature-image.style\:image-fade\:strong .Module--halfWidth:first-of-type figure:after {
-  width: 100%; }
-
-.row--feature-image.style\:image-fade .Module--halfWidth:last-of-type *, .row--feature-image.style\:image-fade\:strong .Module--halfWidth:last-of-type * {
-  position: relative;
-  z-index: 20; }
-
-.row--feature-image .Module--halfWidth:first-of-type {
-  grid-area: image; }
-
-.row--feature-image .Row__title {
-  grid-area: title !important;
-  padding: 3rem 3rem 0.2em 3rem;
-  margin-top: 0; }
-
-.row--feature-image .Row__title:after {
-  display: none; }
-
-.row--feature-image .Module--halfWidth:last-of-type {
-  grid-area: content; }
-
-.row--feature-image img {
-  height: 100%;
-  max-width: none;
-  width: 100%;
-  margin: 0 !important;
-  object-fit: cover;
-  position: relative;
-  object-position: center center; }
-
-.row--feature-image figure.figure--image {
-  display: block;
-  position: relative; }
-
-.row--feature-image .Row {
-  max-width: none;
-  padding: 0;
-  grid-gap: 0; }
-
-.row--feature-image .Module--halfWidth:last-of-type {
-  padding: 0 3rem 3rem 3rem; }
 
 /* END ADD TO */
 /*  IN REPO */
@@ -1013,7 +936,8 @@ input.vb-close.input--click-area:hover {
 .u-lMain h3 {
   letter-spacing: -0.014em; }
 
-.u-lMain .Row__title, .u-lMain h2 {
+.u-lMain .Row__title,
+.u-lMain h2 {
   font-family: freight-big-pro;
   font-size: 2.2em;
   font-weight: 700;
@@ -1037,14 +961,16 @@ input.vb-close.input--click-area:hover {
 .u-BioList__title {
   color: #63666A; }
 
-.u-lMain .Row__title, .u-lMain h2 {
+.u-lMain .Row__title,
+.u-lMain h2 {
   color: #641A2B;
   background: -o-linear-gradient(315deg, #641A2B 0%, #ed1c24 70%);
   background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
   -webkit-background-clip: text;
   color: transparent; }
 
-.u-lMain .Row__title:after, .u-lMain h2:after {
+.u-lMain .Row__title:after,
+.u-lMain h2:after {
   content: "";
   position: absolute;
   width: 3em;
@@ -1108,23 +1034,24 @@ input.vb-close.input--click-area:hover {
     -moz-column-gap: 1em;
     column-gap: 1em; } }
 
-/* AFRS specific ============ */
-.bg--urban-center:before {
-  background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg);
-  opacity: 0.1; }
-
-.u-pageHome.u-folderAfricana-studies .u-lHeader {
-  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-rashid-vassar-3975-crop.jpg); }
-
-.u-folderCourses .u-lHeader {
-  background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-syedullah-vassar-4060-edit1-crop.jpg); }
-
-.u-folderBios .u-lHeader {
-  background-image: url(/africana-studies/assets/images/banner-Lawrence-Mamiya-92-TF-1.jpg); }
-
-.u-folderWork .u-lHeader {
-  background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg); }
-
+/* AFRS specific ============ 
+ .bg--urban-center:before {
+	 background-image: url(/africana-studies/assets/images/Urban-Center_Black-Studies-SPC.jpg);
+	 opacity: 0.1;
+}
+ .u-pageHome.u-folderAfricana-studies .u-lHeader {
+	 background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-rashid-vassar-3975-crop.jpg);
+}
+ .u-folderCourses .u-lHeader {
+	 background-image: url(/africana-studies/assets/images/banner-0066-19-05-kr-afrs-syedullah-vassar-4060-edit1-crop.jpg);
+}
+ .u-folderBios .u-lHeader {
+	 background-image: url(/africana-studies/assets/images/banner-Lawrence-Mamiya-92-TF-1.jpg);
+}
+ .u-folderWork .u-lHeader {
+	 background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
+}
+*/
 .RowContainer.RowContainer--courses {
   display: none; }
 
@@ -1143,7 +1070,8 @@ input.vb-close.input--click-area:hover {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1; }
-  .Media-body, .Media-body :last-child {
+  .Media-body,
+  .Media-body :last-child {
     margin-bottom: 0; }
   .Media-title {
     margin: 0 0 .5em; }
@@ -1268,9 +1196,11 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition-duration: 0.4s;
   transition-duration: 0.4s; }
 
+/*
 .u-pageIndex .u-lHeader {
-  background-image: url(/summer-institute/assets/images/0043_17_06_TT_8837.jpg); }
-
+    background-image: url(/summer-institute/assets/images/0043_17_06_TT_8837.jpg);
+}
+*/
 /*  In the additions repo 
     ===================== */
 /*	Colors
@@ -1299,7 +1229,7 @@ h1, h2, h3, h4, h5, h6 {
 .RowContainer.width-xwide .Row {
   max-width: 58em; }
 
-.button {
+.button, .button--red {
   text-decoration: none !important;
   background: #eee;
   color: #444;
@@ -1314,26 +1244,26 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
   padding: 0.2em 0.4em 0.1em 0.4em; }
 
-.button {
+.button, .button--red {
   -webkit-transition: 0.4s all background;
   -o-transition: 0.4s all background;
   transition: 0.4s all background; }
 
-.button.theme-burgundy-red {
+.button.theme-burgundy-red, .theme-burgundy-red.button--red {
   background: -o-linear-gradient(315deg, #641A2B 0%, #ed1c24 70%);
   background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
   color: #fff; }
 
-.button.theme-burgundy-red:hover, .button.theme-burgundy-red:visited:hover {
+.button.theme-burgundy-red:hover, .theme-burgundy-red.button--red:hover, .button.theme-burgundy-red:visited:hover, .theme-burgundy-red.button--red:visited:hover {
   background-size: 400%; }
 
-.button.style-wireframe {
+.button.style-wireframe, .style-wireframe.button--red {
   background: transparent;
   border: 1px solid #000;
   border-color: var(--border-color, #000);
   color: #000; }
 
-.button.style-wireframe.theme-cream {
+.button.style-wireframe.theme-cream, .style-wireframe.theme-cream.button--red {
   --border-color: #e8d3b8; }
 
 .subtitle {
@@ -1609,6 +1539,27 @@ summary strong {
   position: absolute; }
 
 /*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
+@media screen and (min-width: 50em) {
+  .width\:half {
+    width: 50%; } }
+
+@media screen and (min-width: 50em) {
+  .place\:right {
+    float: right;
+    margin: 0 0 2em 2em; } }
+
+@media screen and (min-width: 50em) {
+  .place\:left {
+    float: left; } }
+
+@media screen and (min-width: 50em) {
+  .indent\:left {
+    margin-left: -10%; } }
+
+@media screen and (min-width: 50em) {
+  .indent\:right {
+    margin-right: -10%; } }
+
 /*	For figures
 	=========== */
 figure.width-wide {
@@ -1634,13 +1585,23 @@ figure.width-wide {
   .RowContainer.width-full .Row {
     max-width: none; }
 
-.button {
+.button--red {
+  text-decoration: none !important;
+  background: #f00;
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  border-radius: 0.4em;
+  color: #fff;
+  margin: 1em 0; }
+
+.button, .button--red {
   text-decoration: none !important;
   background: #eee;
-  color: #444;
   display: inline-block;
   padding: 0.1em 0.4em;
   border-radius: 0.3em; }
+  .button:link, .button--red:link, .button:visited, .button--red:visited {
+    color: #fff; }
 
 .button--small {
   font-size: 76%;
@@ -1649,19 +1610,19 @@ figure.width-wide {
   letter-spacing: 0.04em;
   padding: 0.2em 0.4em 0.1em 0.4em; }
 
-.button {
+.button, .button--red {
   transition: 0.4s all background; }
-  .button.theme-burgundy-red {
+  .button.theme-burgundy-red, .theme-burgundy-red.button--red {
     background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
     color: #fff; }
-    .button.theme-burgundy-red:hover, .button.theme-burgundy-red:visited:hover {
+    .button.theme-burgundy-red:hover, .theme-burgundy-red.button--red:hover, .button.theme-burgundy-red:visited:hover, .theme-burgundy-red.button--red:visited:hover {
       background-size: 400%; }
-  .button.style-wireframe {
+  .button.style-wireframe, .style-wireframe.button--red {
     background: transparent;
     border: 1px solid #000;
     border-color: var(--border-color, #000);
     color: #000; }
-    .button.style-wireframe.theme-cream {
+    .button.style-wireframe.theme-cream, .style-wireframe.theme-cream.button--red {
       --border-color: #e8d3b8; }
 
 .subtitle {
@@ -1676,6 +1637,171 @@ figure.width-wide {
     background: none;
     color: inherit; }
 
+/*	Events system design */
+b.dateTime:before {
+  content: ", "; }
+
+b.dateYear {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px !important; }
+
+.u-ArticleListItem__label--location__label:after {
+  content: ": "; }
+
+/*	Previous design */
+.event__item {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background: #f7f5f5;
+  margin-bottom: 0.4em; }
+  .event__item .event__dateTime {
+    order: 1;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .event__item .event__title {
+    order: 2; }
+  .event__item .event__description {
+    order: 3; }
+  .event__item .event__dateTime > * {
+    display: inline;
+    margin-right: 0.4em; }
+  .carousel-cell .event__item {
+    max-width: 30em;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative; }
+
+/*	FACULTY BIOS */
+.u-folderBios .RowContainer {
+  padding: 0; }
+
+.u-folderBios .Row {
+  max-width: none; }
+
+.u-folderBios h1, .u-folderBios h2, .u-folderBios h3 {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+ul.u-BioList__list {
+  padding: 2em; }
+  @media screen and (min-width: 50em) {
+    ul.u-BioList__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1em; } }
+  @media screen and (min-width: 70em) {
+    ul.u-BioList__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr; } }
+
+/*
+	Neat trick: to extend a link's area, add a pseudo to it. The pseudo extends the clickable area of the link.
+*/
+a.u-BioList__name {
+  position: absolute; }
+
+a.u-BioList__name {
+  background: rgba(0, 0, 0, 0.4);
+  text-decoration: none !important;
+  color: #eee;
+  font-size: 1em;
+  padding: 0.1em 0.5em;
+  backdrop-filter: blur(10px);
+  top: 0.2em;
+  left: 0.2em;
+  border-top-left-radius: 0.2em; }
+
+.u-BioList__item {
+  border-radius: 0.24em;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1em; }
+
+@media screen and (min-width: 50em) {
+  .u-BioList__item {
+    margin-bottom: 0; } }
+
+.u-BioList__item img {
+  display: block;
+  line-height: 0; }
+
+a.u-BioList__name:after {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  content: '';
+  background: transparent;
+  top: 0;
+  left: 0; }
+
+b.u-BioList__title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3em 1em 0.8em 1em;
+  color: #fff;
+  font-size: 0.8em;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%); }
+
+.u-BioList__item {
+  position: relative;
+  will-change: scroll-position;
+  background: linear-gradient(45deg, #c7860c 0%, #aaa 100%);
+  background: #888; }
+
+.u-BioList__item:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: 0.4s all ease;
+  background: linear-gradient(45deg, #c7860c 0%, #aaa 100%);
+  z-index: 1;
+  opacity: 0; }
+
+.u-BioList__item,
+.u-BioList__item img {
+  transition: 0.4s all ease; }
+
+.u-BioList__item:hover {
+  transform: scale(1.04); }
+
+.u-BioList__item:hover img {
+  transform: scale(1.08); }
+
+.u-BioList__item:hover:before {
+  width: 100%;
+  opacity: 1; }
+
+.u-BioList__title,
+.u-BioList__name {
+  transition: 0.4s all ease;
+  z-index: 20; }
+
+.u-BioList__item:hover .u-BioList__title,
+.u-BioList__item:hover .u-BioList__name {
+  opacity: 0; }
+
+.u-BioList__image-container, .u-BioList__image-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
+
+.u-BioList__image-container {
+  position: relative;
+  z-index: 10; }
+
+/*	END FACULTY BIOS */
 .feature-card {
   display: block;
   padding: 1.2em;
@@ -1688,7 +1814,7 @@ figure.width-wide {
   line-height: 1.3; }
 
 .feature-card__supertitle {
-  margin: 000.2em0;
+  margin: 0 0 0.2em 0;
   font-size: 70%;
   text-transform: uppercase;
   letter-spacing: 0.1em; }
@@ -1702,23 +1828,20 @@ figure.width-wide {
   margin-right: 1em; }
 
 .feature-card__title {
-  margin: 001em0;
+  margin: 0 0 1em 0;
   position: relative; }
-
-.feature-card__title:after {
-  position: absolute;
-  content: "";
-  border-top: 1pxsolidrgba 0, 0, 0, 0.2;
-  width: 20%;
-  left: 0;
-  top: 100%;
-  margin-top: 0.5em; }
-
-.Media.feature-card:hover {
-  transform: scale(1.02); }
+  .feature-card__title:after {
+    position: absolute;
+    content: "";
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    width: 20%;
+    left: 0;
+    top: 150%; }
 
 .Media.feature-card {
   transition-duration: 0.4s; }
+  .Media.feature-card:hover {
+    transform: scale(1.02); }
 
 @includebreak (medium) {
   .feature-card {
@@ -1727,12 +1850,241 @@ figure.width-wide {
     width: 40%;
     margin-right: 1.4em; } }
 
+/*
+.carousel-cell figcaption {
+	display: none !important;
+}
+*/
+/*	LAYOUT
+	====== */
+/*	Mobile version
+	--------------
+*/
+@media screen and (max-width: 50em) {
+  .carousel-cell {
+    padding: 1em 2em; } }
+
+@media screen and (min-width: 50em) {
+  .main-carousel:after {
+    content: 'flickity';
+    display: none;
+    /* hide :after */ }
+  #gallery {
+    --unexpandedBg: #eee;
+    --unexpandedHeight: 24em; }
+  .flickity-button:disabled {
+    opacity: 0; }
+  .tile {
+    width: 20em;
+    padding: 3em; }
+  .style\:expand:not(.full).main-carousel {
+    background: var(--unexpandedBg, #aaa); }
+  .style\:expand:not(.full) img {
+    filter: grayscale(1);
+    opacity: 0.4;
+    padding: 2em 0.5em; }
+  .main-carousel {
+    height: var(--unexpandedHeight, 24em);
+    transition: 0.4s all ease;
+    scroll-margin-top: 0;
+    scroll-behavior: smooth; }
+    .main-carousel img {
+      height: 100%;
+      width: auto;
+      padding: 1em; }
+    .main-carousel figure {
+      height: 100%;
+      display: flex;
+      width: fit-content; }
+  .flickity-viewport {
+    height: 100% !important; }
+  .carousel-cell {
+    height: 100%; }
+  .Row [id] {
+    scroll-margin-top: 0 !important; }
+  .carousel-cell {
+    width: fit-content; }
+    .carousel-cell img {
+      height: 100%;
+      padding: 0;
+      width: auto; }
+    .carousel-cell figcaption {
+      width: 0;
+      opacity: 0; }
+  .style\:expand:not(.full) .flickity-button,
+  .style\:expand:not(.full) .flickity-page-dots {
+    display: none; }
+  .style\:expand.full,
+  .full {
+    height: 100vh; }
+    .style\:expand.full .flickity-page-dots,
+    .full .flickity-page-dots {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      bottom: auto;
+      text-align: right; }
+    .style\:expand.full .expand,
+    .full .expand {
+      display: none; }
+    .style\:expand.full .flickity-slider,
+    .full .flickity-slider {
+      height: 100vh; }
+    .style\:expand.full .carousel-cell,
+    .full .carousel-cell {
+      width: 100%;
+      display: inline-block !important;
+      width: max-content;
+      transition: 0.4s all ease;
+      /*
+			&:first-of-type {
+				height: 100%;
+				width: 30em;
+				padding: 3em;
+			}
+			*/ }
+      .style\:expand.full .carousel-cell.is-selected,
+      .full .carousel-cell.is-selected {
+        background: #eee;
+        z-index: 1;
+        box-shadow: 0 0.3em 1em #000; }
+      .style\:expand.full .carousel-cell figcaption,
+      .full .carousel-cell figcaption {
+        color: #444;
+        font-size: 90%;
+        width: 22em;
+        padding: 2em;
+        opacity: 1; }
+    .style\:expand.full img,
+    .full img {
+      height: 100vh;
+      width: auto;
+      padding: 1em; }
+    .style\:expand.full figure,
+    .full figure {
+      height: 100vh;
+      display: flex;
+      width: fit-content; }
+    .style\:expand.full .carousel-cell:not(.is-selected),
+    .full .carousel-cell:not(.is-selected) {
+      opacity: 0.2;
+      transform: scale(0.7) translateX(16em); }
+    .style\:expand.full .is-selected ~ .carousel-cell,
+    .full .is-selected ~ .carousel-cell {
+      opacity: 0.2;
+      transform: scale(0.7) translateX(-16em); }
+    .style\:expand.full .flickity-viewport,
+    .full .flickity-viewport {
+      background: #222; } }
+
+.note--feature {
+  background: #f7f5f5;
+  padding: 1.4em;
+  border: 0.4em solid #fff;
+  box-shadow: 0 0.1em 0.1em rgba(0, 0, 50, 0.2); }
+
+.note--feature .note__title:first-of-type {
+  margin-top: 0; }
+
+.note--feature p {
+  font-size: 0.86em;
+  line-height: 1.4; }
+
+.note--feature p:last-of-type, .note--feature p:only-child {
+  margin-bottom: 0; }
+
 .PageNavContainer .Row {
   background: #fff;
   box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); }
 
 .PageNavContainer {
   top: -1px; }
+
+@media screen and (min-width: 50em) {
+  .pullquote {
+    width: 50%;
+    float: right;
+    padding-left: 2em; } }
+
+@media screen and (min-width: 70em) {
+  .pullquote {
+    width: 60%;
+    margin-right: -10%; } }
+
+/*
+	This overrides the scroll-margin applied to all rows. Some galleries shift to a height of 100vh and snap to the top of the page, and scroll-margin interferes with that.
+*/
+.row--hasGallery .Row__title {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  display: block; }
+
+.row--hasGallery .Row [id] {
+  scroll-margin-top: 0; }
+
+.row--feature-image {
+  padding-bottom: 0 !important; }
+  .row--feature-image .figure--image {
+    height: 100%;
+    margin-bottom: 0; }
+  @media screen and (min-width: 50em) {
+    .row--feature-image .Row {
+      display: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 1px 1px;
+      grid-template-areas: "image title" "image content"; } }
+  .row--feature-image.cols--60-40 .Row {
+    grid-template-columns: 6fr 4fr; }
+  .row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure {
+    width: 116%;
+    max-width: none !important;
+    margin-right: -16%;
+    display: block;
+    position: relative; }
+    .row--feature-image.style\:image-fade .Module--halfWidth:first-of-type figure:after {
+      position: absolute;
+      height: 100%;
+      width: 16%;
+      right: 0;
+      content: "";
+      background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, white 100%);
+      top: 0; }
+  .row--feature-image.style\:image-fade .Module--halfWidth:last-of-type * {
+    position: relative;
+    z-index: 20; }
+  .row--feature-image .Module--halfWidth:first-of-type {
+    grid-area: image; }
+  .row--feature-image .Row__title {
+    grid-area: title !important;
+    padding: 3rem 3rem 0.2em 3rem;
+    margin-top: 0; }
+    .row--feature-image .Row__title:after {
+      content: none; }
+  .row--feature-image .Module--halfWidth:last-of-type {
+    grid-area: content;
+    padding: 0 3rem 3rem 3rem; }
+  .row--feature-image img {
+    height: 100%;
+    max-width: none;
+    width: 100%;
+    margin: 0 !important;
+    object-fit: cover;
+    position: relative;
+    object-position: center center; }
+  .row--feature-image figure.figure--image {
+    display: block;
+    position: relative; }
+  .row--feature-image .Row {
+    max-width: none;
+    padding: 0;
+    grid-gap: 0; }
+  .row--feature-image {
+    padding: 0; }
+  .row--feature-image .Module--halfWidth:last-of-type {
+    padding: 0 2em; }
 
 /* from Summer Institute */
 /* end */
@@ -1748,7 +2100,7 @@ figure.width-wide {
   .schedule-item *:last-child,
   .schedule-item *:only-child {
     margin: 0; }
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 50em) {
     .schedule-item {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -1791,7 +2143,7 @@ figure.width-wide {
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em; }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 50em) {
   .Media {
     display: flex;
     align-items: flex-start;
@@ -1800,7 +2152,8 @@ figure.width-wide {
     margin-right: 1em; }
   .Media-body {
     flex: 1; }
-  .Media-body, .Media-body :last-child {
+  .Media-body,
+  .Media-body :last-child {
     margin-bottom: 0; }
   .Media-title {
     margin: 0 0 .5em; }
@@ -1845,7 +2198,7 @@ b.masthead__smallAnd {
   display: block;
   padding: .3em; }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 50em) {
   .u-Masthead--academic .u-Masthead__siteName--link {
     flex-wrap: unset; } }
 
@@ -1892,6 +2245,16 @@ b.masthead__smallAnd {
   animation-fill-mode: forwards;
   -webkit-animation-name: zoom-in;
   animation-name: zoom-in; }
+
+.button, .button--red {
+  transition: 0.4s background ease;
+  transition-property: background, color; }
+  .button--red:link, .button--red:visited {
+    background: #ED1C24;
+    color: #fff; }
+    .button--red:link:hover, .button--red:visited:hover {
+      background: #641A2B;
+      color: #fff; }
 
 .theme\:cream {
   background: #FFF8EF;
