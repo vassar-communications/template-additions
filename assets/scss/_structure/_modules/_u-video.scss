@@ -1,5 +1,9 @@
 .u-Video {
 	 margin: 2em 0;
+	 
+	 figure > & {
+		 margin-bottom: 0;
+	 }
 
 	.row--large-grid & {
 		 margin: 0;

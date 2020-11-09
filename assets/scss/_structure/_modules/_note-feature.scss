@@ -3,6 +3,13 @@
   padding: 1.4em;
   border: 0.4em solid #fff;
   box-shadow: 0 0.1em 0.1em rgba(0, 0, 50, 0.2);
+
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  
+  @include break(medium) {
+	  margin-top: 0;
+  }
 }
 .note--feature .note__title:first-of-type {
   margin-top: 0;

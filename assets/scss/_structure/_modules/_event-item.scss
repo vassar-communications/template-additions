@@ -1,22 +1,58 @@
 /*	Events system design */
 
-b.dateTime:before {
-    content: ", ";
-}
-b.dateYear {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px !important;
-    padding: 0 !important;
-    overflow: hidden;
-    position: absolute !important;
-    width: 1px !important;
-}
-.u-ArticleListItem__label--location__label:after {
-    content: ": ";
+.u-ArticleGroup {
+	.u-ArticleListItem {
+		background: $gray-warm-xxlight;
+	}
+	b.dateTime:before {
+	    content: ", ";
+	}
+	b.dateYear {
+	    border: 0 !important;
+	    clip: rect(1px, 1px, 1px, 1px);
+	    height: 1px !important;
+	    padding: 0 !important;
+	    overflow: hidden;
+	    position: absolute !important;
+	    width: 1px !important;
+	}
+	.u-ArticleListItem__label--location__label:after {
+	    content: ": ";
+	}
+	.dateMonth {
+		margin-right: 0.2em;
+	}
 }
 
 
+
+.carousel-cell {
+	.series__supertitle {
+	    display: block;
+	    font-size: 0.5em;
+	    text-transform: uppercase;
+	    font-family: "Source Sans Variable";
+	    font-weight: 600;
+	    letter-spacing: 0.1em;
+	    margin: 0.6em 0 0.3em 0;
+	    opacity: 1;
+	}
+	.event__item {
+//		background: #FED847;
+		border: 0.8em solid #FED847;
+	}
+	/*
+	.event__item:before {
+	    position: absolute;
+	    content: '';
+	    top: 0.3em;
+	    left: 0.3em;
+	    bottom: 0.3em;
+	    right: 0.3em;
+	    border: 2px solid #fff;
+	}
+	*/
+}
 
 /*	Previous design */
 

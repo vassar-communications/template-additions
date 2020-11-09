@@ -1,0 +1,13 @@
+.RowContainer {
+	overflow: hidden;
+}
+
+
+
+.RowContainer:last-of-type {
+	margin-bottom: 0 !important;
+}
+.RowContainer:last-of-type:not(.bg) {
+	//	This is an override of something in the main template stylesheet
+	padding-bottom: 0;
+}

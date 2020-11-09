@@ -1,0 +1,12 @@
+/*
+	This library is required by the map-based approach to type styles.
+
+	
+	NOTE
+	Compiling this file will throw an error, even though compiling files
+	that refer to it will not throw errors.
+	
+	Still looking into this, but it's fine.	
+	
+*/
+/* ---- */

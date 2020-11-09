@@ -18,11 +18,24 @@
 				"image content";
 		}
 	}
-	&.cols--60-40 {
-		.Row {
-			grid-template-columns: 6fr 4fr;
+
+	.Module--halfWidth:last-of-type {
+		padding: 2em 3em !important;
+		
+		@include break(medium) {
+			//	Applies a max-width to content
+			padding: 0 2em;
+		    padding-right: calc(50vw - 24em) !important;
 		}
 	}
+	@include break(medium) {
+		&.cols--60-40 {
+			.Row {
+				grid-template-columns: 6fr 4fr;
+			}
+		}
+	}
+
 	&.style:image-monochrome {
 		.Module--halfWidth:first-of-type figure {
 		}
@@ -96,8 +109,5 @@
 	}
 	& {
 		padding: 0;
-	}
-	.Module--halfWidth:last-of-type {
-		padding: 0 2em;
 	}
 }

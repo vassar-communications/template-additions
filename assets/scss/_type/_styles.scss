@@ -1,3 +1,8 @@
+@mixin sansSerif-xsmall() {
+	font-size: 0.8em;
+}
+
+
 @function styles($var...) {
 	$value-list: $vals;
 	$matches: false;

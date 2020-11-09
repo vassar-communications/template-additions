@@ -8,3 +8,26 @@
 	background:#63666A;
 	color:#FFF8EF;
 }
+
+.theme\:charcoal-warm {
+	background: $charcoal-warm;
+	color: $charcoal-warm-text;
+
+	a {	
+		&:link, &:visited {
+			color: #fff;
+			
+			&:hover, &:active, &:focus {
+				color: $charcoal-warm;
+				background: rgba(255,255,255,0.3);
+			}
+		}
+	}
+	
+	.Row__title {
+		color: #bdadad;
+	}
+	.subtitle {
+		opacity: 0.7;
+	}
+}

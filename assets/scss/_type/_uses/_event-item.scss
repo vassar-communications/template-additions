@@ -8,14 +8,14 @@
     }
 }
 .event__description {
-	p {
+	li, p {
 		@include sansSerif(small, condensed);
 	}
 }
 .event__speakerBio {
 	font-style: italic;
 	
-	p {
+	li, p {
 		@include sansSerif(xsmall);		
 	}
 }

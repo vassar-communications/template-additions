@@ -1,0 +1,135 @@
+@-webkit-keyframes sweep {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+details.style\:fancy {
+	margin: 0;
+	background: none;
+	border: none;
+	transition: 0.4s all ease;
+	overflow: hidden;
+
+
+	&[open] {
+		summary {
+	//		background: none !important;
+			color: #222;
+			background: #fff;
+			border-bottom: 1px solid transparent;
+	
+			strong {
+				&:before,
+				&:after {
+		            transform: rotate(45deg) scale(1.1);				
+				}
+			}
+		}
+	}
+	summary {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		transition: 0.4s all ease;
+		color: #d41313;
+		display: block;
+		font-family: freight-big-pro;
+		font-size: 2.2em;
+		font-weight: 100;
+		padding-left: 0.7em;
+
+		& ~ * {
+			animation: sweep .5s ease-in-out;
+		}
+		&, &:hover {
+			background: none !important;			
+		}
+		&:focus {
+		  outline: none;
+		}
+		strong {
+		    display: block;
+		    font-weight: 100;
+			line-height: 1;
+		    margin-left: 0.4em;
+		    position: relative;
+		
+		    @include break(medium) {
+			    margin-left: 0;
+		    }
+		    &:before {
+			    margin-left: -0.6em;
+			    -webkit-text-stroke: 1px;
+			    position: absolute;
+			    content: "+";
+			    font-weight: normal;
+			    transition: 0.4s all ease;
+		    }
+		}
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+}
+/*
+.row--dropdowns,
+.row--bio-dropdowns {
+*/
+@include break(medium) {
+	.Module--halfWidth {
+		&:first-of-type details.style\:fancy summary {
+			text-align: right;
+		}
+		&:first-of-type details.style\:fancy summary strong:before,
+		&:last-of-type details.style\:fancy summary strong:before {
+		    margin-left: -0.6em;
+		    -webkit-text-stroke: 1px;
+		    position: absolute;
+		    content: "+";
+		    font-weight: normal;
+		    transition: 0.4s all ease;
+		}
+		&:last-of-type details.style\:fancy summary strong:before {
+			display: none;
+		}
+		&:last-of-type details.style\:fancy summary strong:after {
+	        position: absolute;
+	        content: "+";
+	        font-weight: normal;
+	        transition: 0.4s all ease;
+	        margin-left: 0.2em;
+	        -webkit-text-stroke: 1px;
+		}
+	}
+}
+
+// }
+
+.row--bio-dropdowns {
+	.bio-card.theme-white {
+		padding: 0;
+		margin: 0;
+		background: none;
+	}
+}
+
+

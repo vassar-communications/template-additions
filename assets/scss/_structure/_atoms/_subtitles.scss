@@ -1,0 +1,15 @@
+.subtitle {
+	h3 & {
+		display: block;
+		font-size: 80%;
+		margin-top: 0.4em;
+		opacity: 0.6;
+	}
+	
+	.Row__title & {
+	    display: block;
+	    font-style: normal;
+	    font-size: 80%;
+	    margin-top: 0.2em;
+	}
+}

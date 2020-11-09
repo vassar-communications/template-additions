@@ -25,7 +25,14 @@
 }
  .row--large-grid .Row {
 	 max-width: none;
-	 display: grid;
-	 grid-template-columns: 1fr 1fr;
-	 grid-gap: 2em;
+	 
+	 @include break(medium) {
+		 display: grid;
+		 grid-template-columns: 1fr 1fr;
+		 grid-gap: 2em;
+	 
+		 .Row__title {
+			 grid-column: 1/3;
+		 }
+	 }
 }

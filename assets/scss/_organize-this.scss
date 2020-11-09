@@ -406,46 +406,6 @@ max-width: 48rem;
 } 
 
 
-
-
-.row--four-cols .Module--halfWidth {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
-}
-
-.row--four-cols .Row.Row--col2 {
-    max-width: none;
-}
-
-.RowContainer.row--four-cols {
-    padding: 4em;
-    background: #222;
-}
-
-/*
-.u-folderFaculty-lectures .u-lHeader {
- background-image: url(/africana-studies/assets/images/1-struggles-sucesses-ym-0598-standard.jpg);
-}
-.u-folderHistory .u-lHeader {
- background-image: url(/africana-studies/assets/images/thomas-occupied-standard.jpg);
-}
-*/
-
-
-
-
-.row--large-grid .Row {
-    max-width: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
-}
-.row--large-grid .u-Video {
-    margin: 0;
-}
-
-
 /*  FLICKITY
     ======== */
     
@@ -500,10 +460,6 @@ https://flickity.metafizzy.co
   grid-template-columns: 6fr 4fr;
 }
 
-.theme\:charcoal-warm {
-  background: #242222;
-  color: #bdadad;
-}
 
 
 /* END ADD TO */
@@ -1265,12 +1221,6 @@ input.vb-close.input--click-area:hover {
     .button.style-wireframe.theme-cream {
       --border-color: #e8d3b8; }
 
-.subtitle {
-  display: block;
-  font-size: 80%;
-  margin-top: 0.4em;
-  opacity: 0.6; }
-
 .PageNavContainer .Row {
   background: #fff;
   -webkit-box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2);
@@ -1381,90 +1331,6 @@ figure.figure--image.place-left.width-thumbnail {
 
 
 
-.row--bio-dropdowns summary ~ * {
-  -webkit-animation: sweep .5s ease-in-out;
-          animation: sweep .5s ease-in-out;
-}
-@-webkit-keyframes sweep {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-.row--bio-dropdowns .bio-card.theme-white {
-  padding: 0;
-  margin: 0;
-  background: none;
-}
-.row--bio-dropdowns details {
-  margin: 0;
-  background: none;
-  border: none;
-  -webkit-transition: 0.4s all ease;
-  -o-transition: 0.4s all ease;
-  transition: 0.4s all ease;
-  overflow: hidden;
-}
-.row--bio-dropdowns summary {
-  font-family: freight-big-pro;
-  font-size: 2.2em;
-  font-weight: 100;
-}
-.row--bio-dropdowns summary,
-.row--bio-dropdowns details[open] summary,
-.row--bio-dropdowns summary:hover {
-  background: none !important;
-}
-.row--bio-dropdowns summary:focus {
-  outline: none;
-}
-.row--bio-dropdowns details[open] summary {
-  color: #222;
-}
-.row--bio-dropdowns details summary::-webkit-details-marker {
-  display: none;
-}
-
-@media screen and (min-width: 56.25em) {
-    .row--bio-dropdowns .Module--halfWidth:first-of-type summary {
-      text-align: right;
-    }
-}
-.row--bio-dropdowns summary {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-transition: 0.4s all ease;
-  -o-transition: 0.4s all ease;
-  transition: 0.4s all ease;
-  color: #d41313;
-  display: block;
-}
-.row--bio-dropdowns details[open] {
-  background: #fff;
-}
-.row--bio-dropdowns details[open] summary {
-  border-bottom: 1px solid transparent;
-}
-
-
-
 
 .row-has-bg {
     position: static;
@@ -1483,50 +1349,6 @@ figure.figure--image.place-left.width-thumbnail {
 
 
 
-summary strong {
-    position: relative;
-    font-weight: 100;
-    display: block;
-}
-
-details[open] summary strong:before,
-details[open] summary strong:after {
-    -webkit-transform: rotate(45deg) scale(1.1);
-        -ms-transform: rotate(45deg) scale(1.1);
-            transform: rotate(45deg) scale(1.1);
-}
-
-.row--bio-dropdowns .Module--halfWidth:first-of-type summary strong:before,
-.row--bio-dropdowns .Module--halfWidth:last-of-type summary strong:before {
-    margin-left: -0.6em;
-    -webkit-text-stroke: 1px;
-    position: absolute;
-    content: "+";
-    font-weight: normal;
-    -webkit-transition: 0.4s all ease;
-    -o-transition: 0.4s all ease;
-    transition: 0.4s all ease;
-}
-
-@media screen and (min-width: 56.25em) {
-    .row--bio-dropdowns .Module--halfWidth:last-of-type summary strong:before {
-        display: none;
-    }
-    .row--bio-dropdowns .Module--halfWidth:last-of-type  summary strong:after {
-        position: absolute;
-        content: "+";
-        font-weight: normal;
-        -webkit-transition: 0.4s all ease;
-        -o-transition: 0.4s all ease;
-        transition: 0.4s all ease;
-        margin-left: 0.2em;
-        -webkit-text-stroke: 1px;
-    }
-}
-
-summary strong {
-    margin-left: 0.4em;
-}
 
 .viewbox-link {
 	position: relative;
@@ -1545,15 +1367,6 @@ summary strong {
 	background-size: cover;
 }
 
-summary strong {
-    margin-left: 0.4em;
-}
-
-@media screen and (min-width: 56.25em) {
-	summary strong {
-	    margin-left: 0;
-	}
-}
 
 
 

@@ -3,7 +3,7 @@ $breakpoints: (
 	"large": 70em
 );
 
-$sansSerif: '"Source Sans Variable","acumin-pro",Arial,Helvetica';
+$sansSerif: "Source Sans Variable","acumin-pro",Arial,Helvetica;
 
 /*	Colors
 	====== */
@@ -22,5 +22,63 @@ $gold: #C6AA76;
 $red: #ED1C24;
 $rowContainer: ".RowContainer";
 
+$charcoal-warm: #242222;
+$charcoal-warm-text: #bdadad;
 
+$gray-warm-xlight: #efeaea;
 $gray-warm-xxlight: #f7f5f5;
+
+
+/*	Specific uses
+	-------------
+
+	The idea: some colors, in addition to being generic shades, also work best for certain circumstances. Using these variables instead of the actual color variable means:
+	- the design is more consistently applied (say, one hover color for all buttons of type X, instead of different ones
+	- it's more maintainable (if we realize that's not a good color, we can change it across the board)	
+*/
+
+//	This shade works best for hoverable elements that have a white background
+$whiteArea-hover-bg: $gray-warm-xlight;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

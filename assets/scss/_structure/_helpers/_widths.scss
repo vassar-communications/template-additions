@@ -12,7 +12,8 @@
 .place\:right {
 	@include break(medium) {
 	  float: right;
-	  margin: 0 0 2em 2em;
+	  margin-bottom: 2em;
+	  margin-left: 2em;
   }
 }
 

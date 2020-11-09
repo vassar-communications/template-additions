@@ -1,0 +1,280 @@
+/*
+	This library is required by the map-based approach to type styles.
+
+	
+	NOTE
+	Compiling this file will throw an error, even though compiling files
+	that refer to it will not throw errors.
+	
+	Still looking into this, but it's fine.	
+	
+*/
+
+
+//	Utilities
+//	=========
+
+@function get-map-value-by-index($map, $index) {
+
+	// As far as I can tell, there doesn't seem to be a function
+	// to get a key-value pair from a map based on index number.
+	// This might be clumsy, but it works: iterate across the map,
+	// incrementing a counter, until the counter matches the
+	// specified index, at which point you return the value.
+
+	$i: 0;
+	@each $key, $value in $map {
+		$i: $i + 1;
+		@if $i == $index {
+			@return $value;
+		}
+	}
+}
+
+@function compareLists($l1, $l2) {
+	//	This compares two lists by iterating through each list
+	//	and seeing if each item is found in the other list.
+
+	$matches: true;
+	@each $item1 in $l1 {
+		@if index($l2, $item1) == null {
+			@return false;
+		}
+	}
+	@each $item2 in $l2 {
+		@if index($l1, $item2) == null {
+			@return false;
+		}
+	}
+	@return $matches;
+}
+
+/* ---- */
+
+@function get-map-value-by-index($map, $index) {
+	//(2)
+	$i: 0;
+
+	@each $key, $value in $map {
+		$i: $i + 1;
+
+		@if $i == $index {
+			@return $value;
+		} @else {
+			//      @return $index;
+		}
+	}
+}
+
+@function get-map-key-by-index($map, $index) {
+	//(2)
+	$i: 0;
+
+	@each $key, $value in $map {
+		$i: $i + 1;
+
+		@if $i == $index {
+			@return $key;
+		}
+	}
+}
+
+@mixin css($rules) {
+	//  This is the main map parser.
+	//  strategy: start with the first row, and grab the first column
+	//  then move to the second row and grab the first column, etc
+	$row: 0;
+	$col: 0;
+	$loop: length($breakpoints);
+
+	@for $i from 1 through $loop {
+		//  For a style declaration, font-size: (1em, 0.9em, 0.8em), the first value
+		//    is the base value. It shouldn't be wrapped in a media query. So if
+		//    we're on 1, we know that we don't wrap it in a media query.
+
+		@if $i == 1 {
+			@each $key, $value in $rules {
+				//  get the list (the value)
+				//  and then loop, ignoring all values but the ith value
+				$count: 0;
+
+				@each $list-item in $value {
+					$count: $count + 1;
+
+					@if $count == $i {
+
+						//  this is the right one. We now have the rule value that
+						//	corresponds to the specific breakpoint we've reached at
+						//	this iteration.
+						
+						//	Here's why I
+						
+						//	nth() - gets the value corresponding to the right media query
+
+						//	to-string: we need to convert this to a string because...
+
+						//	unquote(): ...we need to unquote it in case it's something like
+						//	a font stack.
+						
+						//	Since font stacks are comma-delimited values that
+						//	look an awful lot like a list of values that correspond to specific
+						//	breakpoints, they need to be enclosed in quotes, so the whole stack is
+						//	used. Problem is that if those quotes make it through, the browser treats the font stack
+						//	like a single font declaration, so those quotes have to be removed.
+						
+						//	Now, I don't know which
+						
+						//	And unquote() only works on strings, which is why
+
+						
+						$the-value: nth($value, $count);
+						$the-value: $the-value + unquote("");
+
+						#{$key}: unquote($the-value);
+					}
+				}
+			}
+		} @else {
+			//  This is where it gets a little tricky. $i has progressed past 1,
+			//    which means we're past the base styling and should be wrapping any
+			//    additional values in media queries. However, we're also using $i
+			//    to determine which breakpoint we should use.
+
+			//    If we grabbed the $ith value in the breakpoints map, we'd have already
+			//    skipped past the first breakpoint. If our breakpoints are small,
+			//    medium, and large, the resulting CSS would have styling for base
+			//    values (no media query), and then CSS wrapped in a media query for
+			//    the medium breakpoint. But what happened to the small breakpoint?
+
+			//    So we have to cheat a little. We're still using $i to determine which
+			//    value in a series of styles we should use, but when we use $i to refer to
+			//    a breakpoint, we decrement it. So say $i is 2. We're grabbing the second
+			//    value in the list of, say, font-sizes. However, we need an additional
+			//    variable - something set to $i-1 - to get the appropriate breakpoint,
+			//    which should be "small". Let's call that $j.
+
+			//    (I think the best way to do this would be to start with 0 instead of 1;
+			//    but Sass doesn't allow referring to the 0th element of a list of
+			//    values.)
+			$j: $i - 1;
+			$current-breakpoint: get-map-value-by-index($breakpoints, $j);
+
+			@media screen and (min-width: $current-breakpoint) {
+				@each $key, $value in $rules {
+					//  get the list (the value)
+					//  and then loop, ignoring all values but the ith value
+					$count: 0;
+
+					@each $list-item in $value {
+						$count: $count + 1;
+
+						@if $count == $i {
+							//  this is the right one
+							#{$key}: nth($value, $count);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@mixin font($font, $vals) {
+	
+	//	First thing: Check to see if there are any styles
+	//	defined for the specified font
+	@if map-get($typography, $font) == null {
+		@error "You haven't defined any styles for #{$font} in your $typography map !!1";
+	}
+	
+	//	Then set up a map that will ultimately contain all styling.
+	//	This script runs a series of queries against the main $typography map. It starts
+	//	by collecting some basic styles, then collects the specific styles the user specified
+	//	in the mixin, and finally searches for any combination-specific overrides.
+	
+	//	Example:
+	//	p.condensed { @include font(sansSerif, regular condensed); }
+	//	This needs styles from several sources:
+	//	- the default styles, in $typography > sansSerif > all
+	//	- the regular styles, in $typography > sansSerif > regular
+	//	- the condensed styles, in $typography > sansSerif > condensed
+	//	- the regular condensed styles, in $typography > sansSerif > regular condensed
+
+	
+	
+	$final-styles: ();
+	
+	//  Very first thing: get the basics. These are styles that should apply to
+	//	every one of these classes. Typically that'll be the font-family and
+	//	maybe a line-height.
+
+	$basic-defaults: map-get(map-get($typography, $font), all);
+	//@include css($basic-defaults);
+	$final-styles: map-merge($final-styles, $basic-defaults);
+
+
+	//	@if map-get($typography, $font) != null {
+	//		$font-family: map-get(map-get($typography, $font), font-family);
+	//		font-family: unquote($font-family);
+	//	} @else {
+	//		@error "You haven't defined any styles for #{$font} in your $typography map !!1";
+	//	}
+
+	//  Now, get the rest of the styles.
+
+	$map: map-get($typography, $font);
+	//	$is_matched: false;
+
+	//	First, scan for all styles associated with each keyword.
+	//	So for font(sansSerif, condensed large), it'll grab the
+	//	styles for both condensed and large.
+
+	$unified-styles: ();
+	@each $name, $css in $map {
+		@if index($vals, $name) {
+			$unified-styles: map-merge($unified-styles, $css);
+		}
+	}
+	//@include css($unified-styles);
+	$final-styles: map-merge($final-styles, $unified-styles);
+
+
+	//  Now scan the list of styles for specific combinations.
+	//  These are situations where a set of styles has multiple
+	//  keys: "small condensed", for example. You'd do this in a
+	//  situation where type that's small and condensed needs a
+	//  specific configuration that isn't just the small styles and
+	//  condensed styles combined (say, maybe small condensed text
+	//  needs a different line-height than the standard
+	//  condensed line-height).
+	
+	//	The idea is that if there is a specific combination, it'll 
+	//	override the styles you just grabbed. 
+
+	@each $name, $css in $map {
+		@if compareLists($name, $vals) {
+			//@include css($css);
+			$final-styles: map-merge($final-styles, $css);
+		}
+	}
+	@include css($final-styles);
+}
+
+@mixin make-typographic-classes() {
+	//	Runs through all classes, generates classes: serif-small, serif-medium, etc
+	@each $key, $value in $typography {
+		$font-type: $key;
+
+		$font-type-styles: map-get($typography, $font-type);
+
+		@if $font-type-styles != "font-family" {
+			@each $key, $value in $font-type-styles {
+				.#{$font-type}-#{$key} {
+					@include font($font-type, $key);
+				}
+			}
+		}
+	}
+	//	font(sans-serif, large-condensed)
+}
