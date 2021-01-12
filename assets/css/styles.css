@@ -7,6 +7,8 @@
 	- the design is more consistently applied (say, one hover color for all buttons of type X, instead of different ones
 	- it's more maintainable (if we realize that's not a good color, we can change it across the board)	
 */
+/*	Thematic
+	======== */
 /*
 	This library is required by the map-based approach to type styles.
 
@@ -22,12 +24,12 @@
 h2:first-of-type, h3:first-of-type, h4:first-of-type {
   margin-top: 0; }
 
-h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
-  margin: 1.4em 0 0.4em 0; }
-
 /*
 	Any more specific things - small condensed - must come after the generics
 */
+h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
+  margin: 1.4em 0 0.4em 0; }
+
 .u-BioList--contacts .Contact__nameLink {
   border: none;
   font-family: freight-big-pro;
@@ -130,61 +132,69 @@ h4 {
   margin-bottom: 0.8em;
   margin-top: 0.2em; }
 
+/*
 .pullquote p {
   font-family: "acumin-pro-extra-condensed", "Arial Narrow", "Helvetica Condensed";
   font-size: 2.4em;
   line-height: 1;
-  padding-bottom: 0.2em; }
-
+  padding-bottom: 0.2em;
+}
+*/
 /*  THEMING
     ======= */
+/*
 .theme-cream {
-  background: #FFF8EF; }
-
+	background: #FFF8EF;
+}
+*/
+/*
 .u-BioList__title {
-  color: #63666A; }
-
+  color: #63666A;
+}
+*/
+/*
 .u-lMain .Row__title,
-.u-lMain h2,
-.u-lMain .u-folderBios h3,
-.u-folderBios .u-lMain h3 {
-  color: #641A2B;
-  background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
-  -webkit-background-clip: text;
-  color: transparent; }
-
+.u-lMain h2 {
+	@include text-bg-burgDark-burgRed();
+}
+*/
+/*
 .u-lMain .Row__title:after,
-.u-lMain h2:after,
-.u-lMain .u-folderBios h3:after,
-.u-folderBios .u-lMain h3:after {
+.u-lMain h2:after {
   content: "";
   position: absolute;
   width: 3em;
   border-top: 1px solid #ed1c24;
   left: 0;
-  bottom: -0.25em; }
-
+  bottom: -0.25em;
+}
+*/
+/*
 .pullquote p {
-  background: linear-gradient(135deg, #ed1c24 0%, #C6AA76 70%);
-  -webkit-background-clip: text;
-  color: transparent; }
-
+	@include text-gradient-background($grad-red-gold);
+}
+*/
 /*  STRUCTURE
-    ========= */
-@media screen and (min-width: 37.5em) {
+    ========= 
+
+@include break(small) {
   .pullquote {
     width: 50%;
     float: right;
-    padding-left: 2em; } }
-
-@media screen and (min-width: 64em) {
+    padding-left: 2em;
+  }
+}
+@include break(medium-large) {
   .pullquote {
     width: 60%;
-    margin-right: -10%; } }
-
+    margin-right: -10%;
+  }
+}
+*/
+/*
 .row-has-bg {
-  position: relative; }
-
+  position: relative;
+}
 .row-has-bg:before {
   content: "";
   height: 100%;
@@ -194,38 +204,48 @@ h4 {
   background-attachment: fixed;
   will-change: transform;
   top: 0;
-  left: 0; }
-
+  left: 0;
+}
 .row-has-bg * {
-  z-index: 10; }
-
-.u-lMain h2, .u-lMain .u-folderBios h3, .u-folderBios .u-lMain h3 {
-  display: inline-block; }
-
+  z-index: 10;
+}
+*/
+/*
+.u-lMain h2 {
+  display: inline-block;
+}
+*/
+/*
 figure.width-wide {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   width: 44em;
   transform: translateX(calc(50vw - 50%));
-  max-width: 100vw; }
-
+  max-width: 100vw;
+}*/
+/*
 .RowContainer.width-wide .Row {
-  max-width: 44em; }
-
+    max-width: 44em;
+}
 .RowContainer.width-wider .Row {
-  max-width: 54em; }
+    max-width: 54em;
+}
 
 .RowContainer.width-full {
-  padding: 0; }
-
+    padding: 0;
+}
 .RowContainer.width-full .Row {
-  max-width: none; }
-
+    max-width: none;
+}
+*/
+/*
 @media screen and (min-width: 37.5em) {
   .u-BioList__list {
     column-count: 2;
-    column-gap: 1em; } }
-
+    column-gap: 1em;
+  }
+}
+*/
 /*  AFRS specific
     ============
 .bg--urban-center:before {
@@ -246,121 +266,152 @@ background-position: center;
   background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
 }
 */
+/*
 .RowContainer.RowContainer--courses {
-  display: none; }
-
+    display: none;
+}
+*/
+/*
 @media screen and (min-width: 37.5em) {
-  .Media {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1em; }
-  .Media-figure {
-    margin-right: 1em; }
-  .Media-body {
-    flex: 1; }
-  .Media-body,
-  .Media-body :last-child {
-    margin-bottom: 0; }
-  .Media-title {
-    margin: 0 0 .5em; }
-  .Media--center {
-    align-items: center; }
-  .Media--reverse > .Media-figure {
-    order: 1;
-    margin: 0 0 0 1em; } }
 
+.Media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.Media-figure {
+  margin-right: 1em;
+}
+
+.Media-body {
+  flex: 1;
+}
+.Media-body,
+.Media-body :last-child {
+  margin-bottom: 0;
+}
+
+.Media-title {
+  margin: 0 0 .5em;
+}
+
+.Media--center {
+  align-items: center;
+}
+
+.Media--reverse > .Media-figure {
+  order: 1;
+  margin: 0 0 0 1em;
+}
+}
+*/
+/*
 .animate-onload, .top-75pfrom-topOfWindow {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-name: zoom-in;
-  animation-name: zoom-in; }
-
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: zoom-in;
+    animation-name: zoom-in;
+}
+*/
+/*
 @media screen and (min-width: 37.5em) {
-  .feature-card__image {
+
+.feature-card__image {
     width: 40%;
-    margin-right: 1.4em; } }
-
+    margin-right: 1.4em;
+}
+}
 .feature-card {
-  display: block;
-  padding: 1.2em;
-  background: #f5f1ed;
-  border-radius: 0.2em;
-  text-decoration: none !important; }
-
+    display: block;
+    padding: 1.2em;
+    background: #f5f1ed;
+    border-radius: 0.2em;
+    text-decoration: none !important;
+}
 .feature-card__intro {
-  font-size: 86%;
-  line-height: 1.3; }
-
+    font-size: 86%;
+    line-height: 1.3;
+}
 .feature-card__supertitle {
-  margin: 0 0 0.2em 0;
-  font-size: 70%;
-  text-transform: uppercase;
-  letter-spacing: 0.1em; }
-
+    margin: 0 0 0.2em 0;
+    font-size: 70%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
 .feature-card__read-more {
-  display: block;
-  margin-top: 0.4em;
-  font-weight: bold;
-  font-size: 90%;
-  text-align: right;
-  margin-right: 1em; }
-
+    display: block;
+    margin-top: 0.4em;
+    font-weight: bold;
+    font-size: 90%;
+    text-align: right;
+    margin-right: 1em;
+}
 .feature-card__title {
-  margin: 0 0 1em 0;
-  position: relative; }
-
+    margin: 0 0 1em 0;
+    position: relative;
+}
 .feature-card__title:after {
-  position: absolute;
-  content: "";
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  width: 20%;
-  left: 0;
-  top: 150%; }
-
+    position: absolute;
+    content: "";
+    border-top: 1px solid rgba(0,0,0,0.2);
+    width: 20%;
+    left: 0;
+    top: 150%;
+}
 @media screen and (min-width: 37.5em) {
-  .feature-card {
-    display: flex; } }
-
+    .feature-card {
+        display: flex;
+    }
+}
+*/
 /*  BANNER CAPTIONS
     --------------- */
+/*
 .banner-caption {
-  line-height: 1.3;
-  display: inline-block;
-  font-weight: normal;
-  font-size: 80%; }
-
+    line-height: 1.3;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 80%;
+}
 .banner-caption .banner-caption__label {
-  text-transform: uppercase;
-  margin-right: 0.4em;
-  font-size: 94%; }
-
+    text-transform: uppercase;
+    margin-right: 0.4em;
+    font-size: 94%;
+}
 .banner-credit {
-  display: block;
-  font-size: 90%;
-  opacity: 0.6;
-  font-weight: normal;
-  line-height: 1.2;
-  margin-top: 0.4em; }
+    display: block;
+    font-size: 90%;
+    opacity: 0.6;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-top: 0.4em;
+}
 
 @media screen and (min-width: 1290px) {
-  .banner-caption {
-    font-size: 76%; }
-  .row--banner-caption {
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: calc(((100vw - 48rem) / 2) - 1em);
-    padding: 1em;
-    background: #f7f5f5; } }
-
+    .banner-caption {
+        font-size: 76%;
+    }
+    .row--banner-caption {
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: calc(((100vw - 48rem) / 2) - 1em);
+        padding: 1em;
+        background: #f7f5f5;
+    }
+}
+*/
+/*
 .u-lContent {
-  position: relative; }
-
+    position: relative;
+}
+*/
 h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
   margin: 1.4em 0 0.4em 0; }
 
@@ -384,21 +435,23 @@ h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
     looks excessive when rows are grouped into a section. I think this could be
     solved with a "section" grouping, where rows are collected into a container.
 */
+/*
 .row--no-padding,
 .row--subsection-title {
-  padding-top: 0;
-  padding-bottom: 0; }
-
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .row--subsection-start {
-  padding-bottom: 1em; }
-
+    padding-bottom: 1em;
+}
 .row--subsection {
-  padding-top: 1em;
-  padding-bottom: 1em; }
-
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 .row--subsection-end {
-  padding-top: 1em; }
-
+    padding-top: 1em;
+}
+*/
 .NavSite .u-NavSite__level.u-NavSite__level--1 {
   max-width: 64em;
   margin: 0 auto;
@@ -418,22 +471,28 @@ h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
   transform: translateX(calc(50vw - 50%));
   max-width: 100vw; }
 
+/*
 .row--aside {
-  padding: 2em; }
-
-.row--aside .Row__title, .row--aside .u-folderBios h3, .u-folderBios .row--aside h3 {
-  background: none;
-  color: inherit; }
-
+    padding: 2em;
+}
+.row--aside .Row__title {
+    background: none;
+    color: inherit;    
+}
+*/
+/*
 .theme-cool-gray {
-  background: #63666A;
-  color: #FFF8EF; }
-
-.Row__title, .u-folderBios h3 {
-  max-width: 48rem;
-  margin: 0 auto;
-  width: 100%; }
-
+    background: #63666A;
+    color: #FFF8EF;    
+}
+*/
+/*
+.Row__title {
+	max-width: 48rem;
+	margin: 0 auto;
+	width: 100%;
+} 
+*/
 /*  FLICKITY
     ======== */
 /*! Flickity v2.2.1
@@ -579,36 +638,6 @@ https://flickity.metafizzy.co
   grid-template-columns: 6fr 4fr; }
 
 /* END ADD TO */
-/*  IN REPO */
-.schedule-item {
-  /*	Layout
-		------ */
-  /*	Typography
-		---------- */
-  font-size: 90%;
-  line-height: 1.3;
-  /*	Theme
-		----- */ }
-
-.schedule-item *:last-child,
-.schedule-item *:only-child {
-  margin: 0; }
-
-@media screen and (min-width: 30em) {
-  .schedule-item {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1em 2fr;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 1em; } }
-
-.schedule-item {
-  margin-top: 0.4em;
-  border-top: 1px solid #aaa;
-  border-color: var(--item-rule-border-color);
-  padding-top: 0.4em; }
-
-/* END REPO */
 /* Viewbox */
 @-webkit-keyframes fade-in {
   0% {
@@ -628,20 +657,22 @@ https://flickity.metafizzy.co
   to {
     transform: rotate(360deg); } }
 
+/*
+
 .show-load-screen,
 .loading {
-  position: relative; }
-
+  position: relative;
+}
 .show-load-screen:before,
 .loading:before {
   -webkit-animation-name: spin;
-  animation-name: spin;
+          animation-name: spin;
   -webkit-animation-duration: 10s;
-  animation-duration: 10s;
+          animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
+          animation-timing-function: linear;
   background: url(../images/loader.png);
   position: fixed;
   width: 16em;
@@ -650,14 +681,14 @@ https://flickity.metafizzy.co
   top: calc(50vh - 8em);
   left: calc(50vw - 8em);
   background-size: cover;
-  z-index: 1001; }
-
+  z-index: 1001;
+}
 .show-load-screen:after,
 .loading:after {
   -webkit-animation-name: fade-in;
-  animation-name: fade-in;
+          animation-name: fade-in;
   -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
+          animation-duration: 0.4s;
   position: absolute;
   content: '';
   width: 100%;
@@ -665,44 +696,52 @@ https://flickity.metafizzy.co
   top: 0;
   left: 0;
   background: rgba(255, 255, 255, 0.9);
-  z-index: 1000; }
+  z-index: 1000;
+}
 
-@supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
-  .show-load-screen:after,
-  .loading:after {
-    background: rgba(255, 255, 255, 0.6);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px); } }
+@supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+.show-load-screen:after,
+.loading:after {
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(20px);
+              backdrop-filter: blur(20px);
+  }
+}
 
+*/
+/*
 .viewbox {
-  color: #f00; }
+  color: #f00;
+}
 
 .vb-video-loading {
-  border: 3em solid #ff0 !important; }
+  border: 3em solid #ff0 !important;
+}
 
 .vb-video-loaded.vb-active {
-  overflow: hidden; }
-
+  overflow: hidden;
+}
 .vb-video-loaded.vb-active .vb-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
   -webkit-animation-name: zoom-in;
-  animation-name: zoom-in;
+          animation-name: zoom-in;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  color: #eee; }
-
+          animation-duration: 1s;
+  color: #eee;
+}
 .vb-video-loaded.vb-active .vb-container:before {
   position: absolute;
   content: '';
   top: 1em;
   left: 1em;
   right: 1em;
-  bottom: 1em; }
+  bottom: 1em;
+}
 
 .vb-container {
   display: none;
@@ -713,36 +752,39 @@ https://flickity.metafizzy.co
   width: 100%;
   background: black;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-flow: column;
-  flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  z-index: 314159; }
-
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 314159;
+}
 .vb-container .u-Video {
   -webkit-box-shadow: 0 0.4em 1em #000;
-  box-shadow: 0 0.4em 1em #000;
-  border: 1px solid #444; }
+          box-shadow: 0 0.4em 1em #000;
+  border: 1px solid #444;
+}
 
 .vb-content {
   padding: 3em;
   position: relative;
-  z-index: 20; }
+  z-index: 20;
+}
 
 .input--click-area {
-  /*  Accessibility thing for elements that aren't links but need to be clickable. Set them up as buttons, so the user can tab to them, but wrap them in an element that has the visual design. The button is just a clickable/tab-to area. 
+  //  Accessibility thing for elements that aren't links but need to be clickable. Set them up as buttons, so the user can tab to them, but wrap them in an element that has the visual design. The button is just a clickable/tab-to area. 
   
-  */
   -webkit-appearance: none;
   border: none;
-  background: none; }
+  background: none;
+}
 
 input.vb-close.input--click-area:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .vb-close-wrapper {
   width: 2em;
@@ -757,20 +799,21 @@ input.vb-close.input--click-area:hover {
   background-position: center;
   -webkit-transition: 0.4s background ease;
   -o-transition: 0.4s background ease;
-  transition: 0.4s background ease; }
-
+  transition: 0.4s background ease;
+}
 .vb-close-wrapper:hover, .vb-close-wrapper:focus {
   cursor: pointer;
-  background-size: 100%; }
-
+  background-size: 100%;
+}
 .vb-close-wrapper .input--click-area {
   position: absolute;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .vb-media {
-  position: relative; }
-
+  position: relative;
+}
 .vb-media:before {
   position: absolute;
   top: 0;
@@ -782,12 +825,13 @@ input.vb-close.input--click-area:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.1); }
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+}
 
 @media only screen and (min-width: 600px) {
   .vb-content {
@@ -798,29 +842,43 @@ input.vb-close.input--click-area:hover {
     grid-template-columns: auto 14em;
     -ms-grid-rows: auto 2em 1fr;
     grid-template-rows: auto 1fr;
-    grid-template-areas: "vb-video vb-title" "vb-video vb-caption"; }
+        grid-template-areas: "vb-video vb-title" "vb-video vb-caption";
+  }
+
   .vb-media {
-    grid-area: vb-video; }
+    grid-area: vb-video;
+  }
+
   .vb-title {
     grid-area: vb-title;
-    text-align: left; }
+    text-align: left;
+  }
+
   .vb-caption {
-    grid-area: vb-caption; } }
+    grid-area: vb-caption;
+  }
+}
 
 @media only screen and (min-width: 600px) {
   .vb-media {
     -ms-grid-row: 1;
     -ms-grid-row-span: 3;
-    -ms-grid-column: 1; }
+    -ms-grid-column: 1;
+  }
   .vb-title {
     -ms-grid-row: 1;
-    -ms-grid-column: 3; }
+    -ms-grid-column: 3;
+  }
   .vb-caption {
     -ms-grid-row: 3;
-    -ms-grid-column: 3; } }
-
+    -ms-grid-column: 3;
+  }
+}
 .viewbox-link:hover {
-  cursor: pointer; }
+    cursor: pointer;
+}
+
+
 
 /* end Viewbox */
 .u-lHeader {
@@ -1100,54 +1158,58 @@ input.vb-close.input--click-area:hover {
   -webkit-animation-name: zoom-in;
   animation-name: zoom-in; }
 
-@media screen and (min-width: 37.5em) {
-  .feature-card__image {
-    width: 40%;
-    margin-right: 1.4em; } }
-
-.feature-card {
-  display: block;
-  padding: 1.2em;
-  background: #f5f1ed;
-  border-radius: 0.2em;
-  text-decoration: none !important; }
-
-.feature-card__intro {
-  font-size: 86%;
-  line-height: 1.3; }
-
-.feature-card__supertitle {
-  margin: 0 0 0.2em 0;
-  font-size: 70%;
-  text-transform: uppercase;
-  letter-spacing: 0.1em; }
-
-.feature-card__read-more {
-  display: block;
-  margin-top: 0.4em;
-  font-weight: bold;
-  font-size: 90%;
-  text-align: right;
-  margin-right: 1em; }
-
-.feature-card__title {
-  margin: 0 0 1em 0;
-  position: relative; }
-
-.feature-card__title:after {
-  position: absolute;
-  content: "";
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  width: 20%;
-  left: 0;
-  top: 150%; }
-
-@media screen and (min-width: 37.5em) {
-  .feature-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; } }
-
+/*
+ @media screen and (min-width: 37.5em) {
+	 .feature-card__image {
+		 width: 40%;
+		 margin-right: 1.4em;
+	}
+}
+ .feature-card {
+	 display: block;
+	 padding: 1.2em;
+	 background: #f5f1ed;
+	 border-radius: 0.2em;
+	 text-decoration: none !important;
+}
+ .feature-card__intro {
+	 font-size: 86%;
+	 line-height: 1.3;
+}
+ .feature-card__supertitle {
+	 margin: 0 0 0.2em 0;
+	 font-size: 70%;
+	 text-transform: uppercase;
+	 letter-spacing: 0.1em;
+}
+ .feature-card__read-more {
+	 display: block;
+	 margin-top: 0.4em;
+	 font-weight: bold;
+	 font-size: 90%;
+	 text-align: right;
+	 margin-right: 1em;
+}
+ .feature-card__title {
+	 margin: 0 0 1em 0;
+	 position: relative;
+}
+ .feature-card__title:after {
+	 position: absolute;
+	 content: "";
+	 border-top: 1px solid rgba(0,0,0,0.2);
+	 width: 20%;
+	 left: 0;
+	 top: 150%;
+}
+ @media screen and (min-width: 37.5em) {
+	 .feature-card {
+		 display: -webkit-box;
+		 display: -ms-flexbox;
+		 display: flex;
+	}
+}
+*/
 /* BANNER CAPTIONS --------------- */
 .banner-caption {
   line-height: 1.3;
@@ -1217,24 +1279,27 @@ h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
 .center-title.RowContainer .Row__title:after, .center-title.RowContainer .u-folderBios h3:after, .u-folderBios .center-title.RowContainer h3:after {
   left: calc(50% - 1.5em); }
 
+/*
 .hide-accessibly {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   width: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute; }
-
+*/
 /*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
 /*	For rows
 	======== */
+/*
 .RowContainer.width-xwide .Row {
   max-width: 58em; }
-
-.button, .button--red {
+*/
+/*
+.button {
   text-decoration: none !important;
   background: #eee;
   color: #444;
@@ -1249,152 +1314,155 @@ h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
   padding: 0.2em 0.4em 0.1em 0.4em; }
 
-.button, .button--red {
+.button {
   -webkit-transition: 0.4s all background;
   -o-transition: 0.4s all background;
   transition: 0.4s all background; }
-
-.button.theme-burgundy-red, .theme-burgundy-red.button--red {
-  background: -o-linear-gradient(315deg, #641A2B 0%, #ed1c24 70%);
-  background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
-  color: #fff; }
-
-.button.theme-burgundy-red:hover, .theme-burgundy-red.button--red:hover, .button.theme-burgundy-red:visited:hover {
-  background-size: 400%; }
-
-.button.style-wireframe, .style-wireframe.button--red {
-  background: transparent;
-  border: 1px solid #000;
-  border-color: var(--border-color, #000);
-  color: #000; }
-
-.button.style-wireframe.theme-cream, .style-wireframe.theme-cream.button--red {
-  --border-color: #e8d3b8; }
-
+  .button.theme-burgundy-red {
+    background: -o-linear-gradient(315deg, #641A2B 0%, #ed1c24 70%);
+    background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
+    color: #fff; }
+    .button.theme-burgundy-red:hover, .button.theme-burgundy-red:visited:hover {
+      background-size: 400%; }
+  .button.style-wireframe {
+    background: transparent;
+    border: 1px solid #000;
+    border-color: var(--border-color, #000);
+    color: #000; }
+    .button.style-wireframe.theme-cream {
+      --border-color: #e8d3b8; }
+*/
+/*
 .PageNavContainer .Row {
   background: #fff;
   -webkit-box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); }
+          box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); }
 
 .PageNavContainer {
   top: -1px; }
-
+*/
+/*
 .schedule-item {
-  /*	Layout
-		------ */
-  /*	Typography
-		---------- */
   font-size: 90%;
   line-height: 1.3;
-  /*	Theme
-		----- */ }
-
-.schedule-item *:last-child,
-.schedule-item *:only-child {
-  margin: 0; }
-
-@media screen and (min-width: 30em) {
-  .schedule-item {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1em 2fr;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 1em; } }
+}
+  .schedule-item *:last-child,
+  .schedule-item *:only-child {
+    margin: 0; }
+  @media screen and (min-width: 30em) {
+    .schedule-item {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1em 2fr;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 1em; } }
 
 .schedule-item {
   margin-top: 0.4em;
   border-top: 1px solid #aaa;
   border-color: var(--item-rule-border-color);
   padding-top: 0.4em; }
-
+*/
+/*
 .theme-cream {
   background: #FFF8EF;
   --item-rule-border-color: #e8d3b8; }
-
+*/
 /*
 .RowContainer[class*='theme-'] {
     padding: 2em 0;
 }
 */
-.Row h2, .Row .u-folderBios h3, .u-folderBios .Row h3 {
+/*
+.Row h2 {
   scroll-margin-top: 2em; }
-
+*/
 /*	Hacks
 	===== */
+/*
 .masthead__smallAnd {
-  font-size: 0.7em;
-  opacity: 0.8;
-  text-transform: lowercase;
-  display: block;
-  padding: .3em 0; }
+    font-size: 0.7em;
+    opacity: 0.8;
+    text-transform: lowercase;
+    display: block;
+    padding: .3em 0;
+}
 
 @media screen and (min-width: 30em) {
   .u-Masthead--academic .u-Masthead__siteName--link {
     -ms-flex-wrap: unset;
-    flex-wrap: unset; } }
-
+        flex-wrap: unset; } }
+*/
 figure.figure--image.place-left.width-thumbnail {
   float: left;
   width: 25%;
   margin: 0 1em 1em 0; }
 
+/*
 .bio-card {
-  font-size: 90%;
-  line-height: 1.4;
-  padding: 1em;
-  background: #f5f0f0;
-  margin-bottom: 1em;
-  overflow: hidden; }
+    font-size: 90%;
+    line-height: 1.4;
+    padding: 1em;
+    background: #f5f0f0;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
 
 .bio-card {
-  padding: 2em; }
-
+	padding: 2em;
+}
 .bio-card .figure--image img {
-  margin: 0;
-  line-height: 0;
-  display: block; }
-
+    margin: 0;
+    line-height: 0;
+    display: block;
+}
 .bio-card h3 {
-  margin-top: 0; }
+    margin-top: 0;
+}
 
-.theme-xlightburgundy {
-  background: #f5f0f0; }
 
-.bio-card.theme-white {
-  background: #fff; }
+
 
 .row--bio-card-section .Row {
-  max-width: 58em;
-  grid-column-gap: 1em; }
+	 max-width: 58em;
+    grid-column-gap: 1em;	
+}
 
+*/
+/*
 .row-has-bg {
-  position: static;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  position: relative; }
-
+    position: static;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+}
 .row-has-bg + .RowContainer {
-  padding-top: 2em; }
-
+     padding-top: 2em;   
+}
+*/
+/*
 .PageNavContainer {
-  z-index: 100; }
-
+    z-index: 100;
+}
+*/
+/*
 .viewbox-link {
-  position: relative;
-  margin-left: 1.6em !important;
-  display: inline-block; }
-
+	position: relative;
+	margin-left: 1.6em !important;
+	display: inline-block;
+}
 .viewbox-link:before {
-  width: 1.4em;
-  height: 1.4em;
-  top: 0;
-  left: -1.8em;
-  margin-left: 0 !important;
-  position: absolute;
-  content: '';
-  background-image: url(/summer-institute/assets/images/play-btn.png);
-  background-size: cover; }
-
+	width: 1.4em;
+	height: 1.4em;
+	top: 0;
+	left: -1.8em;
+	margin-left: 0 !important;
+	position: absolute;
+	content: '';
+	background-image: url(/summer-institute/assets/images/play-btn.png);
+	background-size: cover;
+}
+*/
 /*	For rows
 	======== */
 .RowContainer.padding\:medium {
@@ -1418,7 +1486,8 @@ figure.figure--image.place-left.width-thumbnail {
   padding: 0;
   position: absolute; }
 
-/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
+/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname. At the end of this file, I've put styling for specific situations, such as rows.
+		*/
 @media screen and (min-width: 50em) {
   .width\:half {
     width: 50%; } }
@@ -1441,8 +1510,10 @@ figure.figure--image.place-left.width-thumbnail {
   .indent\:right {
     margin-right: -10%; } }
 
+/*	Module-specific overrides
+	========================= */
 /*	For figures
-	=========== */
+	----------- */
 figure.width-wide {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -1452,14 +1523,14 @@ figure.width-wide {
 
 /*	For rows
 	======== */
-.RowContainer.width-xwide .Row {
-  max-width: 58em; }
-
 .RowContainer.width-wide .Row {
   max-width: 44em; }
 
 .RowContainer.width-wider .Row {
   max-width: 54em; }
+
+.RowContainer.width-xwide .Row {
+  max-width: 58em; }
 
 .RowContainer.width-full {
   padding: 0; }
@@ -1494,7 +1565,7 @@ figure.width-wide {
 .button, .button--red {
   transition: 0.4s all background; }
   .button.theme-burgundy-red, .theme-burgundy-red.button--red {
-    background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
+    background: linear-gradient(135deg, #641A2B 0%, #ED1C24 70%);
     color: #fff; }
     .button.theme-burgundy-red:hover, .theme-burgundy-red.button--red:hover, .button.theme-burgundy-red:visited:hover {
       background-size: 400%; }
@@ -1610,7 +1681,33 @@ h3 .subtitle {
     overflow-y: scroll;
     position: relative; }
 
-/*	FACULTY BIOS */
+@media screen and (min-width: 37.5em) {
+  .u-BioList__list {
+    column-count: 2;
+    column-gap: 1em; } }
+
+.bio-card {
+  font-size: 90%;
+  line-height: 1.4;
+  padding: 1em;
+  background: #f5f0f0;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: 2em; }
+  .bio-card .figure--image img {
+    margin: 0;
+    line-height: 0;
+    display: block; }
+  .bio-card h3 {
+    margin-top: 0; }
+
+.row--bio-card-section .Row {
+  max-width: 58em;
+  grid-column-gap: 1em; }
+
+/*	FACULTY BIOS
+	============
+*/
 .u-BioList--faculty {
   /*
 		Neat trick: to extend a link's area, add a pseudo to it. The pseudo extends the clickable area of the link.
@@ -1738,7 +1835,7 @@ h3 .subtitle {
   .Media.feature-card:hover {
     transform: scale(1.02); }
 
-@includebreak (medium) {
+@media screen and (min-width: 50em) {
   .feature-card {
     display: flex; }
   .feature-card__image {
@@ -2091,6 +2188,49 @@ details.style\:fancy {
     .caption.style\:expand.full:\below .flickity-viewport, .caption.full:\below .flickity-viewport {
       background: #222; } }
 
+.show-load-screen,
+.loading {
+  position: relative; }
+  .show-load-screen:before,
+  .loading:before {
+    -webkit-animation-name: spin;
+    animation-name: spin;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: url(../images/loader.png);
+    position: fixed;
+    width: 16em;
+    height: 16em;
+    content: "";
+    top: calc(50vh - 8em);
+    left: calc(50vw - 8em);
+    background-size: cover;
+    z-index: 1001; }
+  .show-load-screen:after,
+  .loading:after {
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000; }
+    @supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
+      .show-load-screen:after,
+      .loading:after {
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px); } }
+
 .note--feature {
   background: #f7f5f5;
   padding: 1.4em;
@@ -2116,31 +2256,93 @@ details.style\:fancy {
   box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2); }
 
 .PageNavContainer {
-  top: -1px; }
+  top: -1px;
+  z-index: 100; }
 
-/* this needs to be here for pages with subnav */
+/* this needs to be here for pages with subnav 
+	UPDATE: commented this out because it's already in _rows.scss
+*/
+.pullquote {
+  padding-bottom: 0.2em; }
+  @media screen and (min-width: 50em) {
+    .pullquote {
+      width: 50%;
+      float: right;
+      padding-left: 2em; } }
+  @media screen and (min-width: 70em) {
+    .pullquote {
+      width: 60%;
+      margin-right: -10%; } }
+  .pullquote p {
+    font-family: acumin-pro-extra-condensed, Arial Narrow, Helvetica Condensed;
+    line-height: 1;
+    font-size: 2.4em;
+    color: #641A2B;
+    background: linear-gradient(135deg, #ED1C24 0%, #C6AA76 70%);
+    -webkit-background-clip: text;
+    color: transparent; }
+
 .Row h2, .Row .u-folderBios h3, .u-folderBios .Row h3 {
-  scroll-margin-top: 2em !important; }
-
-@media screen and (min-width: 50em) {
-  .pullquote {
-    width: 50%;
-    float: right;
-    padding-left: 2em; } }
-
-@media screen and (min-width: 70em) {
-  .pullquote {
-    width: 60%;
-    margin-right: -10%; } }
+  scroll-margin-top: 2em; }
 
 .RowContainer {
   overflow: hidden; }
+  .RowContainer:last-of-type {
+    margin-bottom: 0 !important; }
+    .RowContainer:last-of-type:not(.bg) {
+      padding-bottom: 0; }
 
-.RowContainer:last-of-type {
-  margin-bottom: 0 !important; }
+.Row__title, .u-folderBios h3 {
+  max-width: 48rem;
+  margin: 0 auto;
+  width: 100%; }
 
-.RowContainer:last-of-type:not(.bg) {
+.row-has-bg {
+  position: relative;
+  position: static;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  position: relative; }
+  .row-has-bg:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-attachment: fixed;
+    will-change: transform;
+    top: 0;
+    left: 0; }
+  .row-has-bg + .RowContainer {
+    padding-top: 2em; }
+  .row-has-bg * {
+    z-index: 10; }
+
+/*	Specific rows
+	============= */
+.RowContainer.RowContainer--courses {
+  display: none; }
+
+/*  Row subsections
+    ==============
+    These are necessary because the padding that's appropriate on a single row
+    looks excessive when rows are grouped into a section. I think this could be
+    solved with a "section" grouping, where rows are collected into a container.
+*/
+.row--no-padding,
+.row--subsection-title {
+  padding-top: 0;
   padding-bottom: 0; }
+
+.row--subsection-start {
+  padding-bottom: 1em; }
+
+.row--subsection {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.row--subsection-end {
+  padding-top: 1em; }
 
 /*
 	This overrides the scroll-margin applied to all rows. Some galleries shift to a height of 100vh and snap to the top of the page, and scroll-margin interferes with that.
@@ -2225,14 +2427,12 @@ details.style\:fancy {
 /* from Summer Institute */
 /* end */
 .schedule-item {
-  /*	Layout
-		------ */
-  /*	Typography
-		---------- */
+  margin-top: 0.4em;
+  border-top: 1px solid #aaa;
+  border-color: var(--item-rule-border-color);
+  padding-top: 0.4em;
   font-size: 90%;
-  line-height: 1.3;
-  /*	Theme
-		----- */ }
+  line-height: 1.3; }
   .schedule-item *:last-child,
   .schedule-item *:only-child {
     margin: 0; }
@@ -2241,12 +2441,6 @@ details.style\:fancy {
       display: grid;
       grid-template-columns: 1fr 2fr;
       grid-gap: 1em; } }
-.schedule-item {
-  margin-top: 0.4em;
-  border-top: 1px solid #aaa;
-  border-color: var(--item-rule-border-color);
-  padding-top: 0.4em; }
-
 .js .ticker {
   text-align: center; }
   .js .ticker > ul.ticker__list {
@@ -2333,6 +2527,140 @@ details.style\:fancy {
   .row--large-grid .u-Video {
     margin: 0; }
 
+/*	Viewbox
+	=======
+	
+	This is the modal for the video popover
+*/
+.viewbox {
+  color: #f00; }
+
+.viewbox-link:hover {
+  cursor: pointer; }
+
+.vb-video-loaded.vb-active {
+  overflow: hidden; }
+  .vb-video-loaded.vb-active .vb-container {
+    display: flex;
+    overflow-x: scroll;
+    animation-name: zoom-in;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    color: #eee; }
+    .vb-video-loaded.vb-active .vb-container:before {
+      position: absolute;
+      content: '';
+      top: 1em;
+      left: 1em;
+      right: 1em;
+      bottom: 1em; }
+
+.vb-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  flex-flow: column;
+  justify-content: center;
+  z-index: 314159; }
+  .vb-container .u-Video {
+    box-shadow: 0 0.4em 1em #000;
+    border: 1px solid #444; }
+
+.input--click-area {
+  -webkit-appearance: none;
+  border: none;
+  background: none; }
+  .input--click-area:hover {
+    cursor: pointer; }
+
+.vb-close-wrapper {
+  width: 2em;
+  height: 2em;
+  top: 2em;
+  right: 2em;
+  position: absolute;
+  background: url(../images/x-white.png);
+  z-index: 80;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.4s background ease; }
+  .vb-close-wrapper:hover, .vb-close-wrapper:focus {
+    background-size: 100%;
+    cursor: pointer; }
+  .vb-close-wrapper .input--click-area {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.vb-media {
+  position: relative;
+  grid-area: vb-video; }
+  .vb-media:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "Loading";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1); }
+
+.vb-content {
+  padding: 3em;
+  position: relative;
+  z-index: 20; }
+  @media only screen and (min-width: 600px) {
+    .vb-content {
+      display: grid;
+      grid-gap: 2em;
+      grid-template-columns: auto 14em;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "vb-video vb-title" "vb-video vb-caption"; } }
+.vb-title {
+  grid-area: vb-title;
+  text-align: left; }
+
+.vb-caption {
+  grid-area: vb-caption; }
+
+.viewbox-link {
+  position: relative;
+  margin-left: 1.6em !important;
+  display: inline-block; }
+  .viewbox-link:before {
+    width: 1.4em;
+    height: 1.4em;
+    top: 0;
+    left: -1.8em;
+    margin-left: 0 !important;
+    position: absolute;
+    content: '';
+    background-image: url(/summer-institute/assets/images/play-btn.png);
+    background-size: cover; }
+
+@media only screen and (min-width: 600px) {
+  .vb-media {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1; }
+  .vb-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3; }
+  .vb-caption {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3; } }
+
 /*
 	This needs some organization.
 */
@@ -2381,6 +2709,21 @@ details.style\:fancy {
     order: 1;
     margin: 0 0 0 1em; } }
 
+/*	TEMPLATE FILE
+	=============
+	
+	This file contains:
+	- The overall page structure
+	- Modules that are specific to a template, such as masthead, nav, etc.
+	
+	One thing I've been wondering: should the masthead/nav/banner-caption
+	styling go in modules? I consider them modules, but since they're specific to
+	the template - things you would probably have to edit if you were to make
+	changes to the larger template - I put them here.
+	
+	Might be worth discussing at some point.
+	
+*/
 /*
 .RowContainer[class*='theme-'] {
     padding: 2em 0;
@@ -2422,12 +2765,14 @@ b.masthead__smallAnd {
 
 /*	Banner captions */
 .banner-caption {
-  line-height: 1.3;
   display: inline-block;
   font-weight: normal;
-  font-size: 80%; }
-
-.banner-caption .banner-caption__label {
+  font-size: 80%;
+  line-height: 1.3; }
+  @media screen and (min-width: 1290px) {
+    .banner-caption {
+      font-size: 76%; } }
+.banner-caption__label {
   text-transform: uppercase;
   margin-right: 0.4em;
   font-size: 94%; }
@@ -2441,8 +2786,6 @@ b.masthead__smallAnd {
   margin-top: 0.4em; }
 
 @media screen and (min-width: 1290px) {
-  .banner-caption {
-    font-size: 76%; }
   .row--banner-caption {
     padding: 0;
     position: absolute;
@@ -2487,6 +2830,16 @@ b.masthead__smallAnd {
   .u-folderBios .u-lContent h1, .u-folderBios .u-lContent h3 {
     text-align: center; }
 
+.animate-onload, .top-75pfrom-topOfWindow {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: zoom-in;
+  animation-name: zoom-in; }
+
 .button, .button--red {
   transition: 0.4s background ease;
   transition-property: background, color; }
@@ -2501,9 +2854,26 @@ b.masthead__smallAnd {
 .u-NavSite__item:hover {
   background: #efeaea; }
 
+.u-lMain h2, .u-lMain .u-folderBios h3, .u-folderBios .u-lMain h3,
+.u-lMain .Row__title {
+  display: inline-block;
+  color: #641A2B;
+  background: linear-gradient(135deg, #641A2B 0%, #ED1C24 70%);
+  -webkit-background-clip: text;
+  color: transparent; }
+  .u-lMain h2:after, .u-lMain .u-folderBios h3:after, .u-folderBios .u-lMain h3:after,
+  .u-lMain .Row__title:after {
+    border-top: 1px solid #ED1C24;
+    bottom: -0.25em;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 3em; }
+
+.theme-cream,
 .theme\:cream {
   background: #FFF8EF;
-  --item-rule-border-color:#e8d3b8; }
+  --item-rule-border-color: #e8d3b8; }
 
 .theme:\coolGray {
   background: #63666A;
@@ -2521,3 +2891,10 @@ b.masthead__smallAnd {
     color: #bdadad; }
   .theme\:charcoal-warm .subtitle {
     opacity: 0.7; }
+
+.theme-xlightburgundy,
+.theme\:xlightburgundy {
+  background: #f5f0f0; }
+
+.bio-card.theme-white {
+  background: #fff; }

@@ -1,0 +1,15 @@
+
+.PageNavContainer .Row {
+    background: #fff;
+    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.2);
+}
+.PageNavContainer {
+	top: -1px;
+    z-index: 100;
+}
+
+/* this needs to be here for pages with subnav 
+	UPDATE: commented this out because it's already in _rows.scss
+*/
+
+// .Row h2 { scroll-margin-top: 2em !important; }

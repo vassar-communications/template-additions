@@ -1,0 +1,184 @@
+/*	Viewbox
+	=======
+	
+	This is the modal for the video popover
+*/
+
+.viewbox {
+	color: #f00;
+}
+.vb-video-loading {
+	//	styles for when the video is loading
+}
+.viewbox-link:hover {
+	cursor: pointer;
+}
+
+
+.vb-video-loaded {
+	&.vb-active {
+		overflow: hidden;
+		
+		.vb-container {
+			display: flex;
+			overflow-x: scroll;
+			animation-name: zoom-in;
+			animation-fill-mode: forwards;
+			animation-duration: 1s;
+			color: #eee;
+
+			&:before {
+				position: absolute;
+				content: '';
+				top: 1em;
+				left: 1em;
+				right: 1em;
+				bottom: 1em;
+			}
+		}		
+	}
+}
+
+
+.vb-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	flex-flow: column;
+	justify-content: center;
+	z-index: 314159;
+
+	.u-Video {
+		box-shadow: 0 0.4em 1em #000;
+		border: 1px solid #444;
+	}
+}
+
+.input--click-area {
+	//  Accessibility thing for elements that aren't links
+	//	but need to be clickable. Set them up as buttons, so
+	//	the user can tab to them, but wrap them in an element
+	//	that has the visual design. The button is just a clickable/tab-to area. 
+	
+	-webkit-appearance: none;
+	border: none;
+	background: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.vb-close-wrapper {
+	width: 2em;
+	height: 2em;
+	top: 2em;
+	right: 2em;
+	position: absolute;
+	background: url(../images/x-white.png);
+	z-index: 80;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.4s background ease;
+	
+	&:hover,
+	&:focus {
+		background-size: 100%;
+		cursor: pointer;
+	}
+
+	.input--click-area {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.vb-media {
+	position: relative;
+	grid-area: vb-video;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: "Loading";
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.1);
+	}
+}
+
+
+.vb-content {
+	padding: 3em;
+	position: relative;
+	z-index: 20;
+
+	@media only screen and (min-width: 600px) {
+		display: grid;
+		grid-gap: 2em;
+		grid-template-columns: auto 14em;
+		grid-template-rows: auto 1fr;
+		grid-template-areas: "vb-video vb-title" "vb-video vb-caption";
+	}
+}
+
+.vb-title {
+	grid-area: vb-title;
+	text-align: left;
+}
+.vb-caption {
+	grid-area: vb-caption;
+}
+.viewbox-link {
+	position: relative;
+	margin-left: 1.6em !important;
+	display: inline-block;
+
+	&:before {
+		width: 1.4em;
+		height: 1.4em;
+		top: 0;
+		left: -1.8em;
+		margin-left: 0 !important;
+		position: absolute;
+		content: '';
+		background-image: url(/summer-institute/assets/images/play-btn.png);
+		background-size: cover;
+	}
+}
+
+
+@media only screen and (min-width: 600px) {
+.vb-media {
+-ms-grid-row: 1;
+-ms-grid-row-span: 3;
+-ms-grid-column: 1;
+}
+.vb-title {
+-ms-grid-row: 1;
+-ms-grid-column: 3;
+}
+.vb-caption {
+-ms-grid-row: 3;
+-ms-grid-column: 3;
+}
+}
+
+
+
+
+

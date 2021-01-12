@@ -1,0 +1,86 @@
+.Row h2 {
+	scroll-margin-top: 2em;
+}
+
+.RowContainer {
+	overflow: hidden;
+
+	&:last-of-type {
+		margin-bottom: 0 !important;
+
+		&:not(.bg) {
+			//	This is an override of something in the main template stylesheet
+			padding-bottom: 0;
+		}
+	}
+}
+
+.Row__title {
+	max-width: 48rem;
+	margin: 0 auto;
+	width: 100%;
+} 
+
+.row-has-bg {
+	position: relative;
+
+
+    position: static;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+	
+	&:before {
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background-size: cover;
+		background-attachment: fixed;
+		will-change: transform;
+		top: 0;
+		left: 0;
+	}
+
+	& + .RowContainer {
+	     padding-top: 2em;   
+	}
+	
+	* {
+		z-index: 10;
+	}
+}
+
+/*	Specific rows
+	============= */
+
+.RowContainer.RowContainer--courses {
+	display: none;
+}
+
+
+
+/*  Row subsections
+    ==============
+    These are necessary because the padding that's appropriate on a single row
+    looks excessive when rows are grouped into a section. I think this could be
+    solved with a "section" grouping, where rows are collected into a container.
+*/
+
+.row--no-padding,
+.row--subsection-title {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.row--subsection-start {
+    padding-bottom: 1em;
+}
+.row--subsection {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.row--subsection-end {
+    padding-top: 1em;
+}
+
+

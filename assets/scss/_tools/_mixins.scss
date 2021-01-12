@@ -7,3 +7,16 @@
 		@content
 	}
 }
+
+
+
+
+/*	Thematic
+	======== */
+
+@mixin text-gradient-background($gradient) {
+	color: $burgundy-dark;
+	background: $gradient;
+	-webkit-background-clip: text;
+	color: transparent;
+}

@@ -1,6 +1,9 @@
 $breakpoints: (
+	"small": 37.5em,
 	"medium": 50em,
-	"large": 70em
+	"medium-large": 64em,
+	"large": 70em,
+	"extra-large": 1290px,
 );
 
 $sansSerif: "Source Sans Variable","acumin-pro",Arial,Helvetica;
@@ -12,10 +15,9 @@ $sansSerif: "Source Sans Variable","acumin-pro",Arial,Helvetica;
 $cream: #FFF8EF;
 $cream-for-borders: #e8d3b8;
 
-$grad-burgundy-red: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
-
 $burgundy-dark: #641A2B;
 $burgundy-light: #951829;
+$burgundy-xlight: #f5f0f0;
 
 $gold: #C6AA76;
 
@@ -27,6 +29,12 @@ $charcoal-warm-text: #bdadad;
 
 $gray-warm-xlight: #efeaea;
 $gray-warm-xxlight: #f7f5f5;
+
+$gray-cool: #63666A;
+
+$grad-burgundy-red: linear-gradient(135deg, #641A2B 0%, $red 70%);
+$grad-red-gold: linear-gradient(135deg, $red 0%, $gold 70%);
+
 
 
 /*	Specific uses

@@ -1,12 +1,13 @@
+.theme-cream,
 .theme\:cream {
-	background:$cream;
+	background: $cream;
 	
-	--item-rule-border-color:#{$cream-for-borders};
+	--item-rule-border-color: #{$cream-for-borders};
 }
 
 .theme:\coolGray {
-	background:#63666A;
-	color:#FFF8EF;
+	background: $gray-cool;
+	color: $cream;
 }
 
 .theme\:charcoal-warm {
@@ -31,3 +32,15 @@
 		opacity: 0.7;
 	}
 }
+.theme-xlightburgundy,
+.theme\:xlightburgundy {
+	background: $burgundy-xlight;
+}
+.bio-card.theme-white {
+	background: #fff;
+}
+
+
+
+
+

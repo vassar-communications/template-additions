@@ -1,0 +1,35 @@
+@include break(small) {
+	.u-BioList__list {
+		column-count: 2;
+		column-gap: 1em;
+	}
+}
+
+.bio-card {
+    font-size: 90%;
+    line-height: 1.4;
+    padding: 1em;
+    background: $burgundy-xlight;
+    margin-bottom: 1em;
+    overflow: hidden;
+	padding: 2em;
+
+	.figure--image {
+		img {
+			margin: 0;
+			line-height: 0;
+			display: block;
+	    }
+	}
+	h3 {
+    	margin-top: 0;
+    }
+}
+
+.row--bio-card-section {
+	.Row {
+		max-width: 58em;
+		grid-column-gap: 1em;	
+	}
+}
+

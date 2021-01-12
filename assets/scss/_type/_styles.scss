@@ -54,3 +54,99 @@
 
 
 
+
+
+
+
+
+
+$typography: (
+	condensedHeader: (
+		all: (
+			font-family: "acumin-pro-extra-condensed, Arial Narrow, Helvetica Condensed",
+			line-height: 1,
+		),
+		large: (
+			font-size: 2.4em,
+		),
+	),
+	sansSerif: (
+		all: (
+			font-family: var(--sansSerif, SpaceGrotesk-Regular, system-ui),
+//			line-height: 1.4,
+			letter-spacing: -0.012em,
+			line-height: 1.3,
+		),
+		condensed: (
+			line-height: 1.25,
+		),
+		xxsmall: (
+			font-size: (0.9em, 0.8em, 0.7em),
+		),
+		xsmall: (
+			font-size: 0.8em,
+		),
+		small: (
+			font-size: 0.9em,
+		),
+		xxlarge: (
+			font-size: 4em,
+		),
+		xxlarge condensed: (
+			line-height: 1,
+		),
+		relative-xx-smaller: (
+			font-size: 60%,
+		),
+	),
+	serifDisplay: (
+		all: (
+			font-family: 'TeXGyreSchola, IBMPlexSerif-LightItalic',
+			line-height: 1.5,
+		),
+		medium: (
+			font-size: (1.1em, 1.2em),
+			letter-spacing: -0.026em,
+		),
+		condensed: (
+			line-height: (1.2, 1.2)
+		),
+	),
+	serif: (
+		all: (
+			font-family: 'TeXGyreSchola-Regular, IBMPlexSerif, Calendas-Plus, LibertinusSerif-Regular, Times',
+			line-height: 1.5,
+			letter-spacing: -0.02em,
+		),
+		small: (
+			font-size: 0.9em,
+		),
+		regular: (
+			font-size: (1em, 1em),
+		),
+		weight-regular: (
+			font-weight: normal,
+		),
+		medium: (
+			font-size: (1.1em, 1.2em),
+		),
+		large: (
+			font-size: (1.2em, 1.4em),
+		),
+		xlarge: (
+			font-size: (1.2em, 1.6em),
+		),
+		condensed: (
+			line-height: (1, 1.2)
+		),
+		small condensed:
+		(
+			font-size: 0.8em,
+			line-height: 1.4,
+		),
+		small-caps: (
+			font-variant: small-caps,
+			text-transform: lowercase,
+		)
+	)
+);

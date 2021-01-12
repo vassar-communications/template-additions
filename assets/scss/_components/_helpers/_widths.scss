@@ -1,5 +1,6 @@
 
-/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
+/*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname. At the end of this file, I've put styling for specific situations, such as rows.
+		*/
 
 
 
@@ -40,8 +41,11 @@
 
 
 
+/*	Module-specific overrides
+	========================= */
+
 /*	For figures
-	=========== */
+	----------- */
 
 figure.width-wide {
 	margin-left: calc(50% - 50vw);
@@ -57,17 +61,17 @@ figure.width-wide {
 	======== */
 
 .Row {
+	.RowContainer.width-wide & {
+		max-width: 44em;
+	}
+	 .RowContainer.width-wider & {
+		max-width: 54em;
+	}
 	.RowContainer.width-xwide & {
 	    max-width: 58em;
 	}
 }
 
-.RowContainer.width-wide .Row {
-	 max-width: 44em;
-}
- .RowContainer.width-wider .Row {
-	 max-width: 54em;
-}
 .RowContainer.width-full {
 	padding: 0;
 
@@ -75,3 +79,6 @@ figure.width-wide {
 		max-width: none;
 	}
 }
+
+
+

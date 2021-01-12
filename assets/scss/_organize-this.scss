@@ -48,31 +48,36 @@ h4 {
   margin-top: 0.2em;
 }
 
+/*
 .pullquote p {
   font-family: "acumin-pro-extra-condensed", "Arial Narrow", "Helvetica Condensed";
   font-size: 2.4em;
   line-height: 1;
   padding-bottom: 0.2em;
 }
+*/
 
 /*  THEMING
     ======= */
+/*
 .theme-cream {
-  background: #FFF8EF;
+	background: #FFF8EF;
 }
+*/
 
+/*
 .u-BioList__title {
   color: #63666A;
 }
+*/
 
+/*
 .u-lMain .Row__title,
 .u-lMain h2 {
-  color: #641A2B;
-  background: linear-gradient(135deg, #641A2B 0%, #ed1c24 70%);
-  -webkit-background-clip: text;
-  color: transparent;
+	@include text-bg-burgDark-burgRed();
 }
-
+*/
+/*
 .u-lMain .Row__title:after,
 .u-lMain h2:after {
   content: "";
@@ -82,29 +87,31 @@ h4 {
   left: 0;
   bottom: -0.25em;
 }
-
+*/
+/*
 .pullquote p {
-  background: linear-gradient(135deg, #ed1c24 0%, #C6AA76 70%);
-  -webkit-background-clip: text;
-  color: transparent;
+	@include text-gradient-background($grad-red-gold);
 }
+*/
 
 /*  STRUCTURE
-    ========= */
-@media screen and (min-width: 37.5em) {
+    ========= 
+
+@include break(small) {
   .pullquote {
     width: 50%;
     float: right;
     padding-left: 2em;
   }
 }
-@media screen and (min-width: 64em) {
+@include break(medium-large) {
   .pullquote {
     width: 60%;
     margin-right: -10%;
   }
 }
-
+*/
+/*
 .row-has-bg {
   position: relative;
 }
@@ -122,18 +129,22 @@ h4 {
 .row-has-bg * {
   z-index: 10;
 }
+*/
 
+/*
 .u-lMain h2 {
   display: inline-block;
 }
-
+*/
+/*
 figure.width-wide {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   width: 44em;
   transform: translateX(calc(50vw - 50%));
   max-width: 100vw;
-}
+}*/
+/*
 .RowContainer.width-wide .Row {
     max-width: 44em;
 }
@@ -147,13 +158,17 @@ figure.width-wide {
 .RowContainer.width-full .Row {
     max-width: none;
 }
+*/
 
+/*
 @media screen and (min-width: 37.5em) {
   .u-BioList__list {
     column-count: 2;
     column-gap: 1em;
   }
 }
+*/
+
 /*  AFRS specific
     ============
 .bg--urban-center:before {
@@ -174,11 +189,12 @@ background-position: center;
   background-image: url(/africana-studies/assets/images/20191101-vassar-celebrates-50-years-of-africana-studies-curriculum-with-three-day-conference.jpg);
 }
 */
-
+/*
 .RowContainer.RowContainer--courses {
     display: none;
 }
-
+*/
+/*
 @media screen and (min-width: 37.5em) {
 
 .Media {
@@ -212,9 +228,11 @@ background-position: center;
   margin: 0 0 0 1em;
 }
 }
+*/
 
 
 
+/*
 .animate-onload, .top-75pfrom-topOfWindow {
     -webkit-animation-delay: 0s;
     animation-delay: 0s;
@@ -225,9 +243,9 @@ background-position: center;
     -webkit-animation-name: zoom-in;
     animation-name: zoom-in;
 }
+*/
 
-
-
+/*
 @media screen and (min-width: 37.5em) {
 
 .feature-card__image {
@@ -277,10 +295,12 @@ background-position: center;
         display: flex;
     }
 }
+*/
+
 
 /*  BANNER CAPTIONS
     --------------- */
-
+/*
 .banner-caption {
     line-height: 1.3;
     display: inline-block;
@@ -315,12 +335,13 @@ background-position: center;
         background: #f7f5f5;
     }
 }
+*/
 
-
+/*
 .u-lContent {
     position: relative;
 }
-
+*/
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1.4em 0 0.4em 0;
@@ -347,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
     looks excessive when rows are grouped into a section. I think this could be
     solved with a "section" grouping, where rows are collected into a container.
 */
-
+/*
 .row--no-padding,
 .row--subsection-title {
     padding-top: 0;
@@ -363,8 +384,7 @@ h1, h2, h3, h4, h5, h6 {
 .row--subsection-end {
     padding-top: 1em;
 }
-
-
+*/
 
 
 
@@ -387,7 +407,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   transform: translateX(calc(50vw - 50%));
   max-width: 100vw;
-}    
+}
+
+/*
 .row--aside {
     padding: 2em;
 }
@@ -395,16 +417,20 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     color: inherit;    
 }
+*/
+/*
 .theme-cool-gray {
     background: #63666A;
     color: #FFF8EF;    
 }
+*/
+/*
 .Row__title {
-max-width: 48rem;
-    margin: 0 auto;
-    width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	width: 100%;
 } 
-
+*/
 
 /*  FLICKITY
     ======== */
@@ -466,36 +492,6 @@ https://flickity.metafizzy.co
 
 
 
-/*  IN REPO */
-
-.schedule-item {
-  /*	Layout
-		------ */
-  /*	Typography
-		---------- */
-  font-size: 90%;
-  line-height: 1.3;
-  /*	Theme
-		----- */ }
-  .schedule-item *:last-child,
-  .schedule-item *:only-child {
-    margin: 0; }
-  @media screen and (min-width: 30em) {
-    .schedule-item {
-      display: -ms-grid;
-      display: grid;
-      -ms-grid-columns: 1fr 1em 2fr;
-      grid-template-columns: 1fr 2fr;
-      grid-gap: 1em; } }
-
-.schedule-item {
-  margin-top: 0.4em;
-  border-top: 1px solid #aaa;
-  border-color: var(--item-rule-border-color);
-  padding-top: 0.4em; }
-  
- /* END REPO */
- 
  
  
  
@@ -523,6 +519,8 @@ https://flickity.metafizzy.co
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
+
+/*
 
 .show-load-screen,
 .loading {
@@ -572,6 +570,12 @@ https://flickity.metafizzy.co
               backdrop-filter: blur(20px);
   }
 }
+
+*/
+
+
+
+/*
 .viewbox {
   color: #f00;
 }
@@ -637,9 +641,8 @@ https://flickity.metafizzy.co
 }
 
 .input--click-area {
-  /*  Accessibility thing for elements that aren't links but need to be clickable. Set them up as buttons, so the user can tab to them, but wrap them in an element that has the visual design. The button is just a clickable/tab-to area. 
+  //  Accessibility thing for elements that aren't links but need to be clickable. Set them up as buttons, so the user can tab to them, but wrap them in an element that has the visual design. The button is just a clickable/tab-to area. 
   
-  */
   -webkit-appearance: none;
   border: none;
   background: none;
@@ -1044,6 +1047,9 @@ input.vb-close.input--click-area:hover {
 	 -webkit-animation-name: zoom-in;
 	 animation-name: zoom-in;
 }
+
+
+/*
  @media screen and (min-width: 37.5em) {
 	 .feature-card__image {
 		 width: 40%;
@@ -1094,6 +1100,7 @@ input.vb-close.input--click-area:hover {
 		 display: flex;
 	}
 }
+*/
 /* BANNER CAPTIONS --------------- */
  .banner-caption {
 	 line-height: 1.3;
@@ -1171,6 +1178,8 @@ input.vb-close.input--click-area:hover {
   .center-title.RowContainer .Row__title:after {
     left: calc(50% - 1.5em); }
 
+
+/*
 .hide-accessibly {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
@@ -1181,13 +1190,17 @@ input.vb-close.input--click-area:hover {
   overflow: hidden;
   padding: 0;
   position: absolute; }
-
+*/
 /*	Helper classes may be written differently depending on what they're applied to, but they should always have the same classname.	*/
 /*	For rows
 	======== */
+
+/*
 .RowContainer.width-xwide .Row {
   max-width: 58em; }
+*/
 
+/*
 .button {
   text-decoration: none !important;
   background: #eee;
@@ -1220,7 +1233,11 @@ input.vb-close.input--click-area:hover {
     color: #000; }
     .button.style-wireframe.theme-cream {
       --border-color: #e8d3b8; }
+*/
 
+
+
+/*
 .PageNavContainer .Row {
   background: #fff;
   -webkit-box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.2);
@@ -1228,16 +1245,14 @@ input.vb-close.input--click-area:hover {
 
 .PageNavContainer {
   top: -1px; }
+*/
 
+
+/*
 .schedule-item {
-  /*	Layout
-		------ */
-  /*	Typography
-		---------- */
   font-size: 90%;
   line-height: 1.3;
-  /*	Theme
-		----- */ }
+}
   .schedule-item *:last-child,
   .schedule-item *:only-child {
     margin: 0; }
@@ -1254,22 +1269,27 @@ input.vb-close.input--click-area:hover {
   border-top: 1px solid #aaa;
   border-color: var(--item-rule-border-color);
   padding-top: 0.4em; }
+*/
 
+/*
 .theme-cream {
   background: #FFF8EF;
   --item-rule-border-color: #e8d3b8; }
-
+*/
 /*
 .RowContainer[class*='theme-'] {
     padding: 2em 0;
 }
 */
+
+/*
 .Row h2 {
   scroll-margin-top: 2em; }
+*/
 
 /*	Hacks
 	===== */
-
+/*
 .masthead__smallAnd {
     font-size: 0.7em;
     opacity: 0.8;
@@ -1282,7 +1302,7 @@ input.vb-close.input--click-area:hover {
   .u-Masthead--academic .u-Masthead__siteName--link {
     -ms-flex-wrap: unset;
         flex-wrap: unset; } }
-
+*/
 
 
 
@@ -1292,7 +1312,7 @@ figure.figure--image.place-left.width-thumbnail {
     margin: 0 1em 1em 0;
 }
 
-
+/*
 .bio-card {
     font-size: 90%;
     line-height: 1.4;
@@ -1315,23 +1335,19 @@ figure.figure--image.place-left.width-thumbnail {
 }
 
 
-.theme-xlightburgundy {
-	background: #f5f0f0;
-}
-.bio-card.theme-white {
-	background: #fff;
-}
+
+
 .row--bio-card-section .Row {
 	 max-width: 58em;
     grid-column-gap: 1em;	
 }
 
+*/
 
 
 
 
-
-
+/*
 .row-has-bg {
     position: static;
     padding-top: 2em;
@@ -1341,15 +1357,16 @@ figure.figure--image.place-left.width-thumbnail {
 .row-has-bg + .RowContainer {
      padding-top: 2em;   
 }
-
+*/
+/*
 .PageNavContainer {
     z-index: 100;
 }
+*/
 
 
 
-
-
+/*
 .viewbox-link {
 	position: relative;
 	margin-left: 1.6em !important;
@@ -1366,7 +1383,7 @@ figure.figure--image.place-left.width-thumbnail {
 	background-image: url(/summer-institute/assets/images/play-btn.png);
 	background-size: cover;
 }
-
+*/
 
 
 

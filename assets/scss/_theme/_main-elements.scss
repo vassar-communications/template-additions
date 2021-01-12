@@ -1,0 +1,17 @@
+.u-lMain {
+	h2,
+	.Row__title {
+		display: inline-block;
+
+		@include text-gradient-background($grad-burgundy-red);
+
+		&:after {
+			border-top: 1px solid $red;
+			bottom: -0.25em;
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 3em;
+		}
+	}
+}

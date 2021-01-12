@@ -1,0 +1,18 @@
+.pullquote {
+	padding-bottom: 0.2em;
+
+	@include break(medium) {
+		width: 50%;
+		float: right;
+		padding-left: 2em;
+	}
+	@include break(large) {
+		width: 60%;
+		margin-right: -10%;
+	}
+	
+	p {
+		@include font(condensedHeader, large);
+		@include text-gradient-background($grad-red-gold);
+	}
+}

@@ -1,3 +1,20 @@
+/*	TEMPLATE FILE
+	=============
+	
+	This file contains:
+	- The overall page structure
+	- Modules that are specific to a template, such as masthead, nav, etc.
+	
+	One thing I've been wondering: should the masthead/nav/banner-caption
+	styling go in modules? I consider them modules, but since they're specific to
+	the template - things you would probably have to edit if you were to make
+	changes to the larger template - I put them here.
+	
+	Might be worth discussing at some point.
+	
+*/
+
+
 /*
 .RowContainer[class*='theme-'] {
     padding: 2em 0;
@@ -48,18 +65,22 @@ b.masthead__smallAnd {
 
 /*	Banner captions */
 
- .banner-caption {
-	 line-height: 1.3;
-	 display: inline-block;
-	 font-weight: normal;
-	 font-size: 80%;
+.banner-caption {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 80%;
+	line-height: 1.3;
+
+	@include break(extra-large) {
+		font-size: 76%;
+	}
 }
- .banner-caption .banner-caption__label {
+.banner-caption__label {
 	 text-transform: uppercase;
 	 margin-right: 0.4em;
 	 font-size: 94%;
 }
- .banner-credit {
+.banner-credit {
 	 display: block;
 	 font-size: 90%;
 	 opacity: 0.6;
@@ -67,10 +88,8 @@ b.masthead__smallAnd {
 	 line-height: 1.2;
 	 margin-top: 0.4em;
 }
- @media screen and (min-width: 1290px) {
-	 .banner-caption {
-		 font-size: 76%;
-	}
+
+@include break(extra-large) {
 	 .row--banner-caption {
 		 padding: 0;
 		 position: absolute;
@@ -78,7 +97,7 @@ b.masthead__smallAnd {
 		 top: 0;
 		 width: calc(((100vw - 48rem) / 2) - 1em);
 		 padding: 1em;
-		 background: #f7f5f5;
+		 background: $gray-warm-xxlight;
 	}
 }
 

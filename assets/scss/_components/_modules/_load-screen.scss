@@ -1,0 +1,44 @@
+.show-load-screen,
+.loading {
+	position: relative;
+	
+	&:before {
+		-webkit-animation-name: spin;
+		      animation-name: spin;
+		-webkit-animation-duration: 10s;
+		      animation-duration: 10s;
+		-webkit-animation-iteration-count: infinite;
+		      animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		      animation-timing-function: linear;
+		background: url(../images/loader.png);
+		position: fixed;
+		width: 16em;
+		height: 16em;
+		content: "";
+		top: calc(50vh - 8em);
+		left: calc(50vw - 8em);
+		background-size: cover;
+		z-index: 1001;
+	}
+	&:after {
+		-webkit-animation-name: fade-in;
+		      animation-name: fade-in;
+		-webkit-animation-duration: 0.4s;
+		      animation-duration: 0.4s;
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(255, 255, 255, 0.9);
+		z-index: 1000;
+
+		@supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+			background: rgba(255, 255, 255, 0.6);
+			-webkit-backdrop-filter: blur(20px);
+			backdrop-filter: blur(20px);
+		}
+	}
+}
