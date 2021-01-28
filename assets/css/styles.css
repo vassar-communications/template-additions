@@ -30,6 +30,9 @@ h2:first-of-type, h3:first-of-type, h4:first-of-type {
 h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
   margin: 1.4em 0 0.4em 0; }
 
+.Row__title em, .u-folderBios h3 em {
+  letter-spacing: 0; }
+
 .u-BioList--contacts .Contact__nameLink {
   border: none;
   font-family: freight-big-pro;
