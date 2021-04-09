@@ -1,0 +1,122 @@
+/*
+
+
+Markup:
+	
+<a class="imageButton style:roundGradientZoom" href="/congrats2025/student-experience/res-life/">
+   <figure class="figure--image ">
+      <img loading="lazy" alt="" height="640" src="/congrats2025/assets/images/reslife-tile-110519_160over90_Vassar_2529.jpg" width="960">
+      <figcaption>Residential Life</figcaption>
+   </figure>
+</a>
+
+Note that if the element is contained in a row with a class of row--feature-grid, adding classes to the anchor tag is not necessary. I think, though, that it's better to attach styles to elements themselves, rather than containers.
+
+
+
+Image buttons: these are links that contain only a title and an image.
+
+We might want to have multiple styles of these, which is why I've set up
+the styling in a "style" attribute.
+
+*/
+
+
+.RowContainer.row--feature-grid a,
+.imageButton.style\:roundGradientZoom
+{
+	display: block;
+	border-radius: 0.4em;
+	overflow: hidden;
+
+	.figure--image {
+		position: relative;
+		margin: 0;
+		transition: 0.6s all ease;		
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg,#641a2b 0,#ed1c24 70%);
+			content: '';
+			opacity: 0.6;
+			z-index: 1;
+			transition: 0.6s all ease;				
+		}
+
+		img {
+			filter: grayscale(1);
+			opacity: 0.7;
+			display: block;
+			line-height: 0;
+			margin: 0;
+			transition: 0.6s all ease;
+		}
+		figcaption {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			text-shadow: 0 0 1em #000, 0 0 1em #000;
+			font-family: "acumin-pro-extra-condensed","Arial Narrow","Helvetica Condensed";
+			font-size: 2.4em;
+			transition: 0.6s all ease;
+		}
+	}
+	
+	&:hover {
+		img {
+			filter: grayscale(0);
+			opacity: 1;
+		}				
+		figcaption {
+			opacity: 0;
+		}
+		.figure--image {
+			&:before {
+				opacity: 0;
+			}
+		}
+		img {
+			transform: scale(1.2);
+		}
+	}
+}
+
+
+.RowContainer.row--feature-grid {
+	padding: 1.4em !important;
+
+	& > .Row {
+		& > * {
+			margin-bottom: 1em;
+		}
+	}	
+	
+	@media screen and (min-width: 56.25em) {
+		& > .Row {
+			& > * {
+				margin-bottom: 1em;
+			}
+		}
+
+		.Row {
+			max-width: none;
+			display: grid;
+	        grid-gap: 0.4em;
+	        grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}
+
+
+

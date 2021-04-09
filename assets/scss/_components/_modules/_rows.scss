@@ -19,6 +19,14 @@
 	max-width: 48rem;
 	margin: 0 auto;
 	width: 100%;
+
+	/*	The gradient on row titles extends across the entire space taken
+		up by the row; it's not confined to the text. If the text area is
+		100% wide, but the text itself is a quarter of that, the text is
+		only showing the first quarter of the gradient, so the fact that it's
+		a gradient isn't as apparent. fit-content makes the gradient more apparent.
+	*/
+	width: fit-content !important;
 } 
 
 .row-has-bg {

@@ -47,7 +47,11 @@ h1, h2, .u-folderBios h3, h3, h4, h5, h6 {
 .intro {
   font-size: 2em !important;
   font-family: freight-big-pro;
-  line-height: 1.1; }
+  line-height: 1.1;
+  letter-spacing: 0.012em; }
+
+.intro.size\:smaller {
+  font-size: 1.4em !important; }
 
 .event__title {
   font-family: freight-big-pro;
@@ -2298,7 +2302,14 @@ details.style\:fancy {
 .Row__title, .u-folderBios h3 {
   max-width: 48rem;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+  /*	The gradient on row titles extends across the entire space taken
+		up by the row; it's not confined to the text. If the text area is
+		100% wide, but the text itself is a quarter of that, the text is
+		only showing the first quarter of the gradient, so the fact that it's
+		a gradient isn't as apparent. fit-content makes the gradient more apparent.
+	*/
+  width: fit-content !important; }
 
 .row-has-bg {
   position: relative;
@@ -2359,6 +2370,100 @@ details.style\:fancy {
 .row--hasGallery .Row [id] {
   scroll-margin-top: 0; }
 
+/*
+
+
+Markup:
+	
+<a class="imageButton style:roundGradientZoom" href="/congrats2025/student-experience/res-life/">
+   <figure class="figure--image ">
+      <img loading="lazy" alt="" height="640" src="/congrats2025/assets/images/reslife-tile-110519_160over90_Vassar_2529.jpg" width="960">
+      <figcaption>Residential Life</figcaption>
+   </figure>
+</a>
+
+Note that if the element is contained in a row with a class of row--feature-grid, adding classes to the anchor tag is not necessary. I think, though, that it's better to attach styles to elements themselves, rather than containers.
+
+
+
+Image buttons: these are links that contain only a title and an image.
+
+We might want to have multiple styles of these, which is why I've set up
+the styling in a "style" attribute.
+
+*/
+.RowContainer.row--feature-grid a,
+.imageButton.style\:roundGradientZoom {
+  display: block;
+  border-radius: 0.4em;
+  overflow: hidden; }
+  .RowContainer.row--feature-grid a .figure--image,
+  .imageButton.style\:roundGradientZoom .figure--image {
+    position: relative;
+    margin: 0;
+    transition: 0.6s all ease; }
+    .RowContainer.row--feature-grid a .figure--image:before,
+    .imageButton.style\:roundGradientZoom .figure--image:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #641a2b 0, #ed1c24 70%);
+      content: '';
+      opacity: 0.6;
+      z-index: 1;
+      transition: 0.6s all ease; }
+    .RowContainer.row--feature-grid a .figure--image img,
+    .imageButton.style\:roundGradientZoom .figure--image img {
+      filter: grayscale(1);
+      opacity: 0.7;
+      display: block;
+      line-height: 0;
+      margin: 0;
+      transition: 0.6s all ease; }
+    .RowContainer.row--feature-grid a .figure--image figcaption,
+    .imageButton.style\:roundGradientZoom .figure--image figcaption {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 0 1em #000, 0 0 1em #000;
+      font-family: "acumin-pro-extra-condensed","Arial Narrow","Helvetica Condensed";
+      font-size: 2.4em;
+      transition: 0.6s all ease; }
+  .RowContainer.row--feature-grid a:hover img,
+  .imageButton.style\:roundGradientZoom:hover img {
+    filter: grayscale(0);
+    opacity: 1; }
+  .RowContainer.row--feature-grid a:hover figcaption,
+  .imageButton.style\:roundGradientZoom:hover figcaption {
+    opacity: 0; }
+  .RowContainer.row--feature-grid a:hover .figure--image:before,
+  .imageButton.style\:roundGradientZoom:hover .figure--image:before {
+    opacity: 0; }
+  .RowContainer.row--feature-grid a:hover img,
+  .imageButton.style\:roundGradientZoom:hover img {
+    transform: scale(1.2); }
+
+.RowContainer.row--feature-grid {
+  padding: 1.4em !important; }
+  .RowContainer.row--feature-grid > .Row > * {
+    margin-bottom: 1em; }
+  @media screen and (min-width: 56.25em) {
+    .RowContainer.row--feature-grid > .Row > * {
+      margin-bottom: 1em; }
+    .RowContainer.row--feature-grid .Row {
+      max-width: none;
+      display: grid;
+      grid-gap: 0.4em;
+      grid-template-columns: 1fr 1fr 1fr; } }
 .row--feature-image {
   padding-bottom: 0 !important; }
   .row--feature-image .figure--image {
@@ -2444,6 +2549,139 @@ details.style\:fancy {
       display: grid;
       grid-template-columns: 1fr 2fr;
       grid-gap: 1em; } }
+/*	Stories grid
+	============
+	
+	[describe markup]
+	
+	
+	NOTE: This relies on placing the class on the row, since I'm trying
+	to avoid custom markup. Ideally, the class would be placed on each
+	individual stories module. 
+*/
+.RowContainer.row--stories-grid .figure--image {
+  margin: 0; }
+
+.RowContainer.row--stories-grid .Row__title, .RowContainer.row--stories-grid .u-folderBios h3, .u-folderBios .RowContainer.row--stories-grid h3 {
+  grid-column: 1/3; }
+
+.RowContainer.row--stories-grid .Row h3 {
+  font-family: 'freight-big-pro';
+  font-size: 1.4em;
+  letter-spacing: normal;
+  margin-top: 0.8em;
+  margin: 0; }
+
+.RowContainer.row--stories-grid .Row > div {
+  background: #fff;
+  display: block;
+  padding: 1.2em;
+  box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform ease 0.6s;
+  transition-property: transform, box-shadow; }
+  .RowContainer.row--stories-grid .Row > div:hover {
+    box-shadow: 0 0.8em 0.8em rgba(0, 0, 0, 0.1);
+    transform: scale(1.04);
+    z-index: 2; }
+  .RowContainer.row--stories-grid .Row > div a.readMore {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0; }
+    .RowContainer.row--stories-grid .Row > div a.readMore:hover {
+      background: transparent; }
+    .RowContainer.row--stories-grid .Row > div a.readMore strong {
+      font-size: 80%;
+      text-transform: uppercase; }
+
+.RowContainer.row--stories-grid .Row p {
+  margin: 0;
+  font-size: 90%;
+  line-height: 1.3; }
+
+/*	Special row
+	===========
+	
+	Description: ////
+	
+	Markup: ////
+	
+	Dependencies: This needs the following JS [waypoints]
+	
+	Notes: Rename this to something more descriptive
+	
+*/
+.special-row {
+  position: relative; }
+
+@media screen and (min-width: 56.25em) {
+  .special-row .Row__title:after, .special-row .u-folderBios h3:after, .u-folderBios .special-row h3:after {
+    display: none; }
+  .special-row .Row.Row--col2 {
+    display: block; }
+  .special-row .Module--halfWidth:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; }
+  .special-row .figure--image {
+    height: 100%; }
+  .special-row .Module--halfWidth:last-child {
+    display: none; }
+  .js .RowContainer.special-row {
+    padding: 0;
+    min-height: 100vh; }
+    .js .RowContainer.special-row:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: var(--background-img);
+      background-attachment: fixed;
+      transition: 1s all ease;
+      will-change: transform;
+      background-size: cover; }
+    .js .RowContainer.special-row.topOfWindow:before {
+      filter: grayscale(100%);
+      opacity: 0.1; }
+    .js .RowContainer.special-row.topOfWindow .Module--halfWidth:first-of-type > * {
+      opacity: 1; }
+    .js .RowContainer.special-row .Module--halfWidth:last-child img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%; }
+    .js .RowContainer.special-row .Module--halfWidth:first-of-type > * {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transition: 1s opacity ease; }
+    .js .RowContainer.special-row .Row__title, .js .RowContainer.special-row .u-folderBios h3, .u-folderBios .js .RowContainer.special-row h3 {
+      margin-bottom: 20vh;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 2em 0.8em 0.8em !important;
+      display: inline-block;
+      width: fit-content;
+      padding-top: 2em;
+      background: rgba(0, 0, 0, 0.2) !important;
+      color: #fff !important;
+      margin-top: -0.3em !important;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      /* padding: 0.4em !important;
+				*/ } }
+
 .js .ticker {
   text-align: center; }
   .js .ticker > ul.ticker__list {
@@ -2857,21 +3095,29 @@ b.masthead__smallAnd {
 .u-NavSite__item:hover {
   background: #efeaea; }
 
-.u-lMain h2, .u-lMain .u-folderBios h3, .u-folderBios .u-lMain h3,
-.u-lMain .Row__title {
-  display: inline-block;
-  color: #641A2B;
-  background: linear-gradient(135deg, #641A2B 0%, #ED1C24 70%);
-  -webkit-background-clip: text;
-  color: transparent; }
-  .u-lMain h2:after, .u-lMain .u-folderBios h3:after, .u-folderBios .u-lMain h3:after,
-  .u-lMain .Row__title:after {
-    border-top: 1px solid #ED1C24;
-    bottom: -0.25em;
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 3em; }
+.u-lMain {
+  /*	Daria asked me to remove the pink hover on links - Chris */ }
+  .u-lMain h2, .u-lMain .u-folderBios h3, .u-folderBios .u-lMain h3,
+  .u-lMain .Row__title {
+    display: inline-block;
+    color: #641A2B;
+    background: linear-gradient(135deg, #641A2B 0%, #ED1C24 70%);
+    -webkit-background-clip: text;
+    color: transparent; }
+    .u-lMain h2:after, .u-lMain .u-folderBios h3:after, .u-folderBios .u-lMain h3:after,
+    .u-lMain .Row__title:after {
+      border-top: 1px solid #ED1C24;
+      bottom: -0.25em;
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 3em; }
+  .u-lMain a:focus,
+  .u-lMain a:hover,
+  .u-lMain a:visited:focus,
+  .u-lMain a:visited:hover {
+    background-color: #951829;
+    color: #fff; }
 
 .theme-cream,
 .theme\:cream {

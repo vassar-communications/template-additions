@@ -14,4 +14,14 @@
 			width: 3em;
 		}
 	}
+
+	/*	Daria asked me to remove the pink hover on links - Chris */
+		
+	a:focus,
+	a:hover,
+	a:visited:focus,
+	a:visited:hover {
+		background-color: #951829;
+		color: #fff;
+	}
 }

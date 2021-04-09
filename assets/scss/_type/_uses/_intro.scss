@@ -1,5 +1,10 @@
- .intro {
-	 font-size: 2em !important;
-	 font-family: freight-big-pro;
-	 line-height: 1.1;
+.intro {
+	font-size: 2em !important;
+	font-family: freight-big-pro;
+	line-height: 1.1;
+	letter-spacing: 0.012em;
+}
+
+.intro.size\:smaller {
+	font-size: 1.4em !important;
 }

@@ -1,0 +1,104 @@
+/*	Special row
+	===========
+	
+	Description: ////
+	
+	Markup: ////
+	
+	Dependencies: This needs the following JS [waypoints]
+	
+	Notes: Rename this to something more descriptive
+	
+*/
+
+.special-row {
+	position: relative;
+}
+
+@media screen and (min-width: 56.25em) {
+	.special-row {
+		.Row__title {
+			&:after {
+				display: none;
+			}
+		}
+		.Row.Row--col2 {
+			display: block;
+		}
+		.Module--halfWidth:last-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+		}
+		.figure--image {
+			height: 100%;
+		}
+		.Module--halfWidth:last-child {
+			display: none;
+		}
+	}
+	
+	.js {
+		.RowContainer.special-row {
+			padding: 0;
+			min-height: 100vh;
+
+			&:before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-image: var(--background-img);
+				background-attachment: fixed;
+				transition: 1s all ease;
+				will-change: transform;
+				background-size: cover;
+			}
+			
+			&.topOfWindow {
+				&:before {
+					filter: grayscale(100%);
+					opacity: 0.1;
+				}
+				.Module--halfWidth:first-of-type > * {
+					opacity: 1;
+				}
+			}
+			.Module--halfWidth {
+				&:last-child {
+					img {
+						object-fit: cover;
+						height: 100%;
+						width: 100%;
+					}
+				}
+				&:first-of-type > * {
+					position: relative;
+					z-index: 1;
+					opacity: 0;
+					transition: 1s opacity ease;
+				}
+			}
+			.Row__title {
+				margin-bottom: 20vh;
+				position: relative;
+				z-index: 10;
+				width: 100%;
+				padding: 2em 0.8em 0.8em !important;
+				display: inline-block;
+				width: fit-content;
+				padding-top: 2em;
+				background: rgba(0,0,0,0.2) !important;
+				color: #fff !important;
+				margin-top: -0.3em !important;
+				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(20px);
+				/* padding: 0.4em !important;
+				*/
+			}
+		}
+	}
+}
